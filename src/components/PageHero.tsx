@@ -26,7 +26,9 @@ export function PageHero({
       </svg>
 
       <Container className="relative">
-        <div className="max-w-3xl py-16 sm:py-20 lg:py-24">
+        {/* Top padding clears the fixed header (80px mobile / 88px lg+),
+            which floats over this section rather than pushing it down. */}
+        <div className="max-w-3xl pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24">
           {eyebrow ? (
             <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
               {eyebrow}

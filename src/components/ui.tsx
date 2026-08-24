@@ -43,7 +43,11 @@ export function Section({
     size === "compact"
       ? "py-12 sm:py-16"
       : size === "tall"
-        ? "py-20 sm:py-28 lg:py-32"
+        // Every current use of "tall" is a top-of-page state (404, admin
+        // login, order-not-found, access errors) sitting directly under the
+        // fixed header — the extra top padding is clearance, not a design
+        // choice that would need revisiting for a mid-page "tall" section.
+        ? "pt-28 pb-20 sm:pt-32 sm:pb-28 lg:pt-40 lg:pb-32"
         : "py-16 sm:py-20 lg:py-24";
 
   return (
@@ -133,16 +137,18 @@ export function Rule({ className = "" }: { className?: string }) {
 type ButtonVariant = "gold" | "navy" | "outline" | "outline-light" | "ghost";
 
 const variants: Record<ButtonVariant, string> = {
-  gold: "bg-gold text-navy hover:bg-gold-400 border border-gold hover:border-gold-400",
-  navy: "bg-navy text-white hover:bg-navy-700 border border-navy hover:border-navy-700",
+  gold: "bg-gold text-navy hover:bg-gold-400 border border-gold hover:border-gold-400 hover:shadow-[0_16px_30px_-14px_rgba(199,154,68,0.6)]",
+  navy: "bg-navy text-white hover:bg-navy-700 border border-navy hover:border-navy-700 hover:shadow-[0_16px_30px_-14px_rgba(13,27,51,0.5)]",
   outline: "border border-navy/25 text-navy hover:border-gold hover:text-gold bg-transparent",
   "outline-light":
     "border border-white/35 text-white hover:border-gold hover:text-gold bg-transparent",
-  ghost: "text-gold hover:text-gold-400 border border-transparent px-0",
+  ghost: "text-gold hover:text-gold-400 border border-transparent px-0 hover:translate-y-0",
 };
 
+// A tasteful lift, not a bounce: buttons rise 2px on hover and settle back
+// down faster than they rose, echoing how apple.com's controls respond.
 const buttonBase =
-  "inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-200 disabled:cursor-not-allowed disabled:opacity-55";
+  "inline-flex items-center justify-center gap-2.5 px-7 py-3.5 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-all duration-300 ease-[var(--ease-glide)] hover:-translate-y-0.5 active:translate-y-0 active:duration-150 disabled:cursor-not-allowed disabled:opacity-55 disabled:hover:translate-y-0 disabled:hover:shadow-none";
 
 export function Button({
   variant = "gold",
@@ -205,12 +211,12 @@ export function LinkArrow({
   return (
     <Link
       href={href}
-      className={`group tap-expand inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-colors ${
+      className={`group tap-expand inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300 ease-[var(--ease-glide)] ${
         tone === "gold" ? "text-gold hover:text-gold-600" : "text-navy hover:text-gold"
       } ${className}`}
     >
       {children}
-      <Arrow className="transition-transform duration-200 group-hover:translate-x-1" />
+      <Arrow className="transition-transform duration-300 ease-[var(--ease-glide)] group-hover:translate-x-1.5" />
     </Link>
   );
 }
@@ -247,7 +253,7 @@ export function IconCircle({
   const dims = size === "sm" ? "h-11 w-11" : "h-16 w-16";
   return (
     <span
-      className={`inline-flex ${dims} shrink-0 items-center justify-center rounded-full border border-gold/45 text-gold ${className}`}
+      className={`inline-flex ${dims} shrink-0 items-center justify-center rounded-full border border-gold/45 text-gold transition-[transform,border-color,background-color] duration-500 ease-[var(--ease-glide)] group-hover:-translate-y-0.5 group-hover:border-gold group-hover:bg-gold/10 ${className}`}
     >
       {children}
     </span>

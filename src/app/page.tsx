@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { HeroBackdrop } from "@/components/HeroBackdrop";
 import { ProductVisual } from "@/components/ProductVisual";
+import { Reveal } from "@/components/Reveal";
 import {
   Container,
   Section,
@@ -79,20 +80,30 @@ export default function HomePage() {
       <section className="relative isolate bg-navy">
         <HeroBackdrop />
         <Container className="relative">
-          <div className="max-w-2xl py-20 sm:py-28 lg:py-36">
-            <h1 className="text-4xl leading-[1.08] text-white sm:text-5xl lg:text-[3.75rem]">
+          {/* Top padding clears the fixed header (80px mobile / 88px lg+),
+              which floats over this section rather than pushing it down. */}
+          <div className="max-w-2xl pt-28 pb-20 sm:pt-32 sm:pb-28 lg:pt-44 lg:pb-36">
+            <h1 className="hero-rise text-[2.75rem] leading-[1.06] tracking-[-0.015em] text-white sm:text-5xl lg:text-[4rem] xl:text-[4.5rem]">
               Strategy is important.
               <span className="mt-1 block text-gold">Alignment is everything.</span>
             </h1>
 
-            <Rule />
+            <div className="hero-rise" style={{ animationDelay: "120ms" }}>
+              <Rule />
+            </div>
 
-            <p className="max-w-lg text-base leading-relaxed text-white/80 sm:text-lg">
+            <p
+              className="hero-rise max-w-lg text-base leading-relaxed text-white/80 sm:text-lg"
+              style={{ animationDelay: "180ms" }}
+            >
               Avensra helps organisations align their strategy with their people so
               performance is not just planned, it is lived.
             </p>
 
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
+            <div
+              className="hero-rise mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4"
+              style={{ animationDelay: "280ms" }}
+            >
               <ButtonLink href="/digital-products" variant="gold">
                 Explore Digital Products <Arrow />
               </ButtonLink>
@@ -101,7 +112,10 @@ export default function HomePage() {
               </ButtonLink>
             </div>
 
-            <dl className="mt-14 grid max-w-xl grid-cols-1 gap-6 border-t border-white/15 pt-8 xs:grid-cols-3 sm:gap-4">
+            <dl
+              className="hero-rise mt-14 grid max-w-xl grid-cols-1 gap-6 border-t border-white/15 pt-8 xs:grid-cols-3 sm:gap-4"
+              style={{ animationDelay: "380ms" }}
+            >
               {pillars.map(({ icon: Icon, title, sub }, index) => (
                 <div
                   key={title}
@@ -130,7 +144,7 @@ export default function HomePage() {
         <Container>
           <div className="grid divide-y divide-ivory-200 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
             {/* Consulting */}
-            <div className="flex flex-col px-0 py-14 lg:px-9 lg:py-16 lg:first:pl-0">
+            <Reveal className="group flex flex-col px-0 py-14 lg:px-9 lg:py-16 lg:first:pl-0">
               <IconCircle className="mx-auto">
                 <IconStrategy className="h-7 w-7" />
               </IconCircle>
@@ -154,10 +168,10 @@ export default function HomePage() {
                   Explore Consulting <Arrow />
                 </ButtonLink>
               </div>
-            </div>
+            </Reveal>
 
             {/* Digital products */}
-            <div className="flex flex-col px-0 py-14 lg:px-9 lg:py-16">
+            <Reveal delay={110} className="group flex flex-col px-0 py-14 lg:px-9 lg:py-16">
               <IconCircle className="mx-auto">
                 <IconProduct className="h-7 w-7" />
               </IconCircle>
@@ -199,15 +213,15 @@ export default function HomePage() {
               <div className="mt-auto pt-9">
                 <Link
                   href="/digital-products"
-                  className="flex w-full items-center justify-center gap-2 border border-gold/50 px-6 py-3.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-gold transition-colors hover:bg-gold hover:text-navy"
+                  className="flex w-full items-center justify-center gap-2 border border-gold/50 px-6 py-3.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-gold transition-all duration-300 ease-[var(--ease-glide)] hover:-translate-y-0.5 hover:bg-gold hover:text-navy"
                 >
                   View all digital products <Arrow />
                 </Link>
               </div>
-            </div>
+            </Reveal>
 
             {/* Corporate experiences */}
-            <div className="flex flex-col px-0 py-14 lg:px-9 lg:py-16 lg:last:pr-0">
+            <Reveal delay={220} className="group flex flex-col px-0 py-14 lg:px-9 lg:py-16 lg:last:pr-0">
               <IconCircle className="mx-auto">
                 <IconPeople className="h-7 w-7" />
               </IconCircle>
@@ -276,7 +290,7 @@ export default function HomePage() {
                   </LinkArrow>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </Container>
       </section>
@@ -285,7 +299,7 @@ export default function HomePage() {
       <section className="bg-navy py-16 sm:py-20">
         <Container>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:gap-12">
-            <div>
+            <Reveal>
               <h2 className="font-heading text-[1.7rem] leading-tight text-gold">
                 THE EXECUTIVE RESET&trade;
               </h2>
@@ -309,48 +323,50 @@ export default function HomePage() {
                   View all options
                 </ButtonLink>
               </div>
-            </div>
+            </Reveal>
 
             <div className="grid gap-px border-t border-white/12 bg-white/12 sm:grid-cols-2 lg:grid-cols-4 lg:border-l lg:border-t-0">
-              {experiences.map((experience) => (
-                <div
-                  key={experience.id}
-                  className="flex flex-col bg-navy px-6 py-8 text-center"
-                >
-                  <IconCircle size="sm" className="mx-auto">
-                    {experience.fromUsd === null ? (
-                      <IconPeople className="h-5 w-5" />
-                    ) : (
-                      <IconClock className="h-5 w-5" />
-                    )}
-                  </IconCircle>
-                  <h3 className="mt-5 font-body text-[0.7rem] font-bold uppercase leading-snug tracking-[0.1em] text-white">
-                    {experience.fromUsd === null
-                      ? "21+ participants or custom needs"
-                      : `${experience.duration.replace(" minutes", "-minute")} ${experience.name}`}
-                  </h3>
-                  <p className="mt-4 text-[0.83rem] leading-relaxed text-white/65">
-                    {experience.fromUsd === null ? experience.promise : experience.promise}
-                  </p>
+              {experiences.map((experience, i) => (
+                <Reveal key={experience.id} delay={i * 90}>
+                  {/* Hover lift lives on this inner element, separate from
+                      Reveal's own entrance transform on the wrapper above —
+                      two transforms on one node would fight each other. */}
+                  <div className="group flex h-full flex-col bg-navy px-6 py-8 text-center transition-[transform,background-color] duration-500 ease-[var(--ease-glide)] hover:-translate-y-1 hover:bg-navy-700">
+                    <IconCircle size="sm" className="mx-auto">
+                      {experience.fromUsd === null ? (
+                        <IconPeople className="h-5 w-5" />
+                      ) : (
+                        <IconClock className="h-5 w-5" />
+                      )}
+                    </IconCircle>
+                    <h3 className="mt-5 font-body text-[0.7rem] font-bold uppercase leading-snug tracking-[0.1em] text-white">
+                      {experience.fromUsd === null
+                        ? "21+ participants or custom needs"
+                        : `${experience.duration.replace(" minutes", "-minute")} ${experience.name}`}
+                    </h3>
+                    <p className="mt-4 text-[0.83rem] leading-relaxed text-white/65">
+                      {experience.fromUsd === null ? experience.promise : experience.promise}
+                    </p>
 
-                  <div className="mt-auto pt-6">
-                    {experience.fromUsd === null ? (
-                      <LinkArrow href="/contact">Contact us</LinkArrow>
-                    ) : (
-                      <>
-                        <p className="text-[0.68rem] uppercase tracking-[0.14em] text-white/50">
-                          From
-                        </p>
-                        <p className="font-heading text-[2rem] leading-none text-gold">
-                          {formatUsd(experience.fromUsd)}
-                        </p>
-                        <p className="mt-2 text-[0.72rem] text-white/45">
-                          {experience.capacity}
-                        </p>
-                      </>
-                    )}
+                    <div className="mt-auto pt-6">
+                      {experience.fromUsd === null ? (
+                        <LinkArrow href="/contact">Contact us</LinkArrow>
+                      ) : (
+                        <>
+                          <p className="text-[0.68rem] uppercase tracking-[0.14em] text-white/50">
+                            From
+                          </p>
+                          <p className="font-heading text-[2rem] leading-none text-gold">
+                            {formatUsd(experience.fromUsd)}
+                          </p>
+                          <p className="mt-2 text-[0.72rem] text-white/45">
+                            {experience.capacity}
+                          </p>
+                        </>
+                      )}
+                    </div>
                   </div>
-                </div>
+                </Reveal>
               ))}
             </div>
           </div>
@@ -361,8 +377,8 @@ export default function HomePage() {
       <section className="border-y border-ivory-200 bg-white py-12">
         <Container>
           <ul className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-            {trustSignals.map(({ icon: Icon, title, body }) => (
-              <li key={title} className="flex items-start gap-4">
+            {trustSignals.map(({ icon: Icon, title, body }, i) => (
+              <Reveal key={title} as="li" delay={i * 80} className="group flex items-start gap-4">
                 <IconCircle size="sm">
                   <Icon className="h-5 w-5" />
                 </IconCircle>
@@ -374,7 +390,7 @@ export default function HomePage() {
                     {body}
                   </p>
                 </div>
-              </li>
+              </Reveal>
             ))}
           </ul>
         </Container>
@@ -382,7 +398,7 @@ export default function HomePage() {
 
       {/* ------------------------------- CTA ------------------------------ */}
       <Section tone="ivory" size="compact">
-        <div className="flex flex-col items-center gap-8 bg-navy px-8 py-12 text-center sm:px-12 lg:flex-row lg:justify-between lg:gap-12 lg:text-left">
+        <Reveal className="flex flex-col items-center gap-8 bg-navy px-8 py-12 text-center sm:px-12 lg:flex-row lg:justify-between lg:gap-12 lg:text-left">
           <div>
             <h2 className="font-heading text-2xl leading-tight text-white sm:text-[2rem]">
               Ready to align strategy, people and performance?
@@ -394,7 +410,7 @@ export default function HomePage() {
           <ButtonLink href="/contact" variant="gold" className="shrink-0 px-9 py-4">
             Let&rsquo;s Talk <Arrow />
           </ButtonLink>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

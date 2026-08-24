@@ -97,7 +97,7 @@ export default async function AccessPage({
     <>
       <section className="bg-navy">
         <div className="mx-auto w-full max-w-[76rem] px-[var(--shell-x)]">
-          <div className="max-w-2xl py-14 sm:py-16">
+          <div className="max-w-2xl pt-28 pb-14 sm:pt-32 sm:pb-16">
             <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
               Your access
             </p>

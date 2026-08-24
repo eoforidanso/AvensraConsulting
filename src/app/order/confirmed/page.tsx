@@ -101,7 +101,7 @@ export default async function OrderConfirmedPage({
 
       <section className="bg-navy">
         <Container>
-          <div className="mx-auto max-w-2xl py-16 text-center sm:py-20">
+          <div className="mx-auto max-w-2xl pt-28 pb-16 text-center sm:pt-32 sm:pb-20">
             <IconCircle className="mx-auto border-gold bg-gold/10">
               <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true">
                 <path

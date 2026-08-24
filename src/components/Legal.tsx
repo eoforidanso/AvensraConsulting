@@ -29,7 +29,7 @@ export function LegalPage({
     <>
       <section className="bg-navy">
         <Container>
-          <div className="max-w-3xl py-14 sm:py-16">
+          <div className="max-w-3xl pt-28 pb-14 sm:pt-32 sm:pb-16">
             <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
               Legal
             </p>

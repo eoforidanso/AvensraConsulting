@@ -93,7 +93,7 @@ export default function ExecutiveResetPage() {
         </svg>
 
         <Container className="relative">
-          <div className="grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:py-24">
+          <div className="grid items-center gap-12 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-40 lg:pb-24">
             <div>
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
                 Digital Product &middot; Guided Experience

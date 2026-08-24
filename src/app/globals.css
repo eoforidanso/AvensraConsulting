@@ -20,6 +20,11 @@
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
   --breakpoint-xs: 30rem;
+
+  /* Shared easing curve for scroll reveals, hovers and nav transitions —
+     one signature of unhurried, considered motion instead of every
+     component picking its own. Expo-out: fast start, long soft landing. */
+  --ease-glide: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 @layer base {
@@ -59,6 +64,28 @@
   ::selection {
     background: var(--color-gold);
     color: var(--color-navy);
+  }
+}
+
+/* -----------------------------------------------------------------
+   Hero entrance — plays once on load, above the fold, never on scroll.
+   Staggered via animation-delay on each child; reduced-motion users
+   get the base @media rule below, which drops the duration to ~0.
+   ----------------------------------------------------------------- */
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@layer utilities {
+  .hero-rise {
+    animation: hero-rise 0.9s var(--ease-glide) both;
   }
 }
 

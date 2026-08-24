@@ -12,6 +12,7 @@ export function Header() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Route changes must always leave the menus closed.
@@ -19,6 +20,26 @@ export function Header() {
     setMobileOpen(false);
     setOpenMenu(null);
   }, [pathname]);
+
+  // Every page opens on a navy hero, so the bar starts blended into it and
+  // only gains its own solid, blurred surface once content has scrolled
+  // underneath — read via rAF so it never fights the browser's paint work.
+  useEffect(() => {
+    let ticking = false;
+    const measure = () => {
+      setScrolled(window.scrollY > 24);
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(measure);
+      }
+    };
+    measure();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Lock background scroll while the mobile sheet is open.
   useEffect(() => {
@@ -55,7 +76,13 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-navy/95 backdrop-blur-sm">
+    <header
+      className={`fixed inset-x-0 top-0 z-50 transition-[background-color,backdrop-filter,box-shadow,border-color] duration-500 ease-[var(--ease-glide)] ${
+        scrolled || mobileOpen
+          ? "border-b border-white/10 bg-navy/90 shadow-[0_12px_30px_-16px_rgba(0,0,0,0.55)] backdrop-blur-xl"
+          : "border-b border-transparent bg-navy/40 backdrop-blur-md"
+      }`}
+    >
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-gold focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-navy"
@@ -109,8 +136,14 @@ export function Header() {
                     }`}
                   />
 
-                  {hasChildren && openMenu === item.label ? (
-                    <div className="absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 pt-3">
+                  {hasChildren ? (
+                    <div
+                      className={`absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 pt-3 transition-[opacity,transform] duration-300 ease-[var(--ease-glide)] ${
+                        openMenu === item.label
+                          ? "pointer-events-auto translate-y-0 opacity-100"
+                          : "pointer-events-none -translate-y-1.5 opacity-0"
+                      }`}
+                    >
                       <div className="border border-ivory-200 bg-white p-2 shadow-[0_18px_50px_-12px_rgba(13,27,51,0.35)]">
                         {item.children!.map((child) => (
                           <Link
@@ -173,12 +206,16 @@ export function Header() {
         </div>
       </Container>
 
-      {/* Mobile sheet */}
-      {mobileOpen ? (
-        <div
-          id="mobile-nav"
-          className="max-h-[calc(100dvh-5rem)] overflow-y-auto border-t border-white/10 bg-navy lg:hidden"
-        >
+      {/* Mobile sheet — always mounted so the collapse can animate; a CSS
+          grid-rows trick handles unknown content height without measuring. */}
+      <div
+        id="mobile-nav"
+        aria-hidden={!mobileOpen}
+        className={`grid overflow-hidden border-t border-white/10 bg-navy transition-[grid-template-rows] duration-[400ms] ease-[var(--ease-glide)] lg:hidden ${
+          mobileOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
+        }`}
+      >
+        <div className="max-h-[calc(100dvh-5rem)] min-h-0 overflow-y-auto">
           <Container>
             <nav aria-label="Mobile" className="flex flex-col py-4">
               {primaryNav.map((item) => (
@@ -209,14 +246,14 @@ export function Header() {
 
               <Link
                 href="/contact"
-                className="mt-6 mb-4 inline-flex items-center justify-center gap-2 bg-gold px-6 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-navy"
+                className="mt-6 mb-4 inline-flex items-center justify-center gap-2 bg-gold px-6 py-4 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-navy transition-transform duration-300 ease-[var(--ease-glide)] active:scale-[0.98]"
               >
                 Contact Us <Arrow />
               </Link>
             </nav>
           </Container>
         </div>
-      ) : null}
+      </div>
     </header>
   );
 }
