@@ -133,13 +133,13 @@ commit real files until that's resolved**, tracked in
 
 ---
 
-## 6. Brand colour tokens — ⚠️ discrepancy to resolve before any asset work
+## 6. Brand colour tokens — RESOLVED, use the design-direction sheet
 
 The site's CSS tokens (`src/app/globals.css`) were built from the values on
-`avensra-design-direction.jpeg`. The new production brief states **different**
-hex values for the same five colours:
+`avensra-design-direction.jpeg`. The production brief's own colour table
+(§3) stated different hex values for the same five colours:
 
-| Colour | Design-direction sheet (what the site uses today) | Production brief (this PDF, §3) |
+| Colour | Design-direction sheet (correct — use this) | Production brief §3 (has a typo) |
 |---|---|---|
 | Navy | `#0D1B33` | `#0B1D33` |
 | Gold | `#C79A44` | `#C7A24A` |
@@ -147,13 +147,8 @@ hex values for the same five colours:
 | Charcoal | `#1B1F24` | `#2B2B2B` |
 | White | `#FFFFFF` | `#FFFFFF` |
 
-Navy and Gold are close (transposed digits — possibly a typo in one
-document). Charcoal is materially different: `#1B1F24` is a navy-tinted
-near-black, `#2B2B2B` is a neutral mid-grey — these would look visibly
-different as body text and dark UI.
-
-**Both documents are presented as approved Avensra brand direction. This
-needs a decision from Avensra, not a guess** — whichever is confirmed correct,
-it's a one-file change (`src/app/globals.css`, the five `--color-*` tokens
-under `@theme`) and every page updates automatically; nothing else in the
-codebase hardcodes a hex value.
+**Confirmed by Avensra (2026-08-24): the design-direction sheet is correct.**
+If you were handed the production brief PDF directly, use the hex values in
+the table above (left column), not the ones printed in that PDF's own §3 —
+its colour table has not been corrected at the source. The site's tokens
+already reflect the correct values; nothing to change in code.
