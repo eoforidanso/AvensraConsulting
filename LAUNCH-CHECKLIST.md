@@ -25,15 +25,26 @@ before the site goes live. Items are ordered by what blocks launch first.
 
 ## 2. Brand assets still needed
 
+A formal `Brand & Product Production Brief` for a graphic designer has since
+been added at `brand/avensra-brand-product-production-brief.pdf`, covering
+exactly the three items below. The companion document
+`brand/WEBSITE-ASSET-SPEC.md` maps every deliverable in that brief to the
+exact filename, format and code location it needs to land in — so integration
+is a drop-in once the designer delivers, no further back-and-forth needed.
+
 | # | Item | Current state |
 |---|---|---|
-| 2.1 | **Official logo files** | The artwork sheet says "use supplied logo files only — do not alter or redraw". No files were supplied, so `src/components/Logo.tsx` contains a faithful **placeholder** built to the artwork's proportions. Drop the real SVGs into `public/` and swap `<Mark/>` for `<Image>`. |
-| 2.2 | **Hero photograph** | The artwork uses a sunrise-over-mountains photograph. None was supplied. `HeroBackdrop.tsx` is an on-brand vector stand-in holding the same composition. Add `public/hero.jpg` and render it behind the existing gradient overlays. |
-| 2.3 | **Product mockup images** | `ProductVisual.tsx` holds vector stand-ins for the bound system and printed book. Replace with the real renders when available. |
-| 2.4 | LinkedIn company URL | `src/lib/site.ts` has a best guess — confirm the real URL. |
+| 2.1 | **Official logo files** | Both the artwork sheet and the new production brief say not to redesign this — use the supplied reference only. No final files delivered yet, so `src/components/Logo.tsx` contains a faithful **placeholder**. See `WEBSITE-ASSET-SPEC.md` §1 for exact filenames. |
+| 2.2 | **Hero photograph + watermark A** | `HeroBackdrop.tsx` is an on-brand vector stand-in. The brief (§8) specifies the watermark A at 10–15% opacity — the placeholder already uses 14%, so the real asset can go in at the same setting. See spec §2. |
+| 2.3 | **Product mock-ups (both products)** | `ProductVisual.tsx` holds vector stand-ins. See spec §3–4 for exact filenames, and §5 for the distinction between this presentation art and the actual protected product PDFs in item 1.9. |
+| 2.4 | **Brand colour hex values — CONFLICT, needs Avensra to confirm** | The design-direction artwork and the new production brief state **different** hex values for Navy, Gold, Ivory and Charcoal (Charcoal especially: `#1B1F24` vs `#2B2B2B`, a visibly different colour). The site currently uses the artwork sheet's values. **Do not start logo/asset production against either document's colours until this is resolved** — see `WEBSITE-ASSET-SPEC.md` §6 for the full comparison. Once confirmed, it's a five-line change in `src/app/globals.css`. |
+| 2.5 | LinkedIn company URL | `src/lib/site.ts` has a best guess — confirm the real URL. |
+| 2.6 | The Executive Reset™ Corporate Edition — how licence ID / org name are filled in | Brief §15 asks for a "Corporate Edition" with adaptable licence fields. Flag whether this is a flat template the designer hands over, or something generated per order — the latter would need a small change to `src/lib/fulfilment.ts`. |
 
-None of these block launch; all three placeholders are brand-consistent and
-production-quality. They are marked with handover comments in the code.
+None of the design work blocks the website launch itself — the placeholders
+are brand-consistent, production-quality, and clearly commented for swap-out.
+The colour conflict (2.4) does block *starting* real asset production, since
+a designer working now could build against the wrong palette.
 
 ---
 
