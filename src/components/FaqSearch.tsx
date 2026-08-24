@@ -52,7 +52,7 @@ export function FaqSearch() {
             <li key={category.id}>
               <a
                 href={`#${category.id}`}
-                className="inline-block border border-navy/15 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.11em] text-navy transition-colors hover:border-gold hover:text-gold"
+                className="inline-block border border-navy/15 px-4 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.11em] text-navy transition-colors hover:border-gold hover:text-gold sm:py-2"
               >
                 {category.title}
               </a>

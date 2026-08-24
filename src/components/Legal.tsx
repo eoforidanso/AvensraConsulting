@@ -50,12 +50,12 @@ export function LegalPage({
               <h2 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-gold">
                 All policies
               </h2>
-              <ul className="mt-5 space-y-3">
+              <ul className="mt-3 sm:mt-5 sm:space-y-1">
                 {footerNav.legal.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-sm leading-snug text-charcoal/70 transition-colors hover:text-gold"
+                      className="inline-block py-2 text-sm leading-snug text-charcoal/70 transition-colors hover:text-gold sm:py-1"
                     >
                       {link.label}
                     </Link>

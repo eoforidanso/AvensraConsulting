@@ -205,7 +205,7 @@ export function LinkArrow({
   return (
     <Link
       href={href}
-      className={`group inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-colors ${
+      className={`group tap-expand inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-colors ${
         tone === "gold" ? "text-gold hover:text-gold-600" : "text-navy hover:text-gold"
       } ${className}`}
     >

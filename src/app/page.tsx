@@ -150,7 +150,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="mt-auto pt-9">
-                <ButtonLink href="/consulting" variant="navy">
+                <ButtonLink href="/consulting" variant="navy" className="w-full sm:w-auto">
                   Explore Consulting <Arrow />
                 </ButtonLink>
               </div>

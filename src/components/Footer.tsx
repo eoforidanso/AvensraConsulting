@@ -4,6 +4,13 @@ import { Container } from "./ui";
 import { IconMail, IconLinkedIn, IconGlobe } from "./icons";
 import { site, footerNav } from "@/lib/site";
 
+/**
+ * Footer.
+ *
+ * Mobile stacks to a single centred column; from `sm` up it becomes the
+ * left-aligned multi-column layout on the artwork sheet. Link padding is
+ * sized so every tap target clears ~40px on touch devices.
+ */
 function Column({
   title,
   links,
@@ -16,12 +23,12 @@ function Column({
       <h3 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold">
         {title}
       </h3>
-      <ul className="mt-5 space-y-2.5">
+      <ul className="mt-4 space-y-0 sm:mt-5 sm:space-y-1.5">
         {links.map((link) => (
           <li key={link.href + link.label}>
             <Link
               href={link.href}
-              className="text-sm leading-relaxed text-charcoal/75 transition-colors hover:text-gold"
+              className="inline-block py-2.5 text-sm leading-relaxed text-charcoal/75 transition-colors hover:text-gold sm:py-0.5"
             >
               {link.label}
             </Link>
@@ -32,12 +39,37 @@ function Column({
   );
 }
 
+function ConnectLink({
+  href,
+  icon,
+  label,
+  external,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+  external?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
+      className="flex items-center gap-3 py-1.5 text-sm text-charcoal/75 transition-colors hover:text-gold"
+    >
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold">
+        {icon}
+      </span>
+      {label}
+    </a>
+  );
+}
+
 export function Footer() {
   return (
     <footer className="border-t border-ivory-200 bg-ivory">
       <Container>
-        <div className="grid gap-12 py-14 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-10 lg:py-16">
-          <div>
+        <div className="grid gap-10 py-12 text-center sm:grid-cols-2 sm:gap-12 sm:text-left lg:grid-cols-[1.3fr_1fr_1fr_1fr] lg:gap-10 lg:py-16">
+          <div className="flex flex-col items-center sm:items-start">
             <Logo tone="dark" />
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-charcoal/70">
               {site.description}
@@ -51,56 +83,43 @@ export function Footer() {
             <h3 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold">
               Connect
             </h3>
-            <ul className="mt-5 space-y-4">
+            <ul className="mt-4 inline-flex flex-col gap-2 text-left sm:mt-5 sm:flex sm:gap-3">
               <li>
-                <a
+                <ConnectLink
                   href={`mailto:${site.email}`}
-                  className="group flex items-center gap-3 text-sm text-charcoal/75 transition-colors hover:text-gold"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold">
-                    <IconMail className="h-4 w-4" />
-                  </span>
-                  {site.email}
-                </a>
+                  icon={<IconMail className="h-4 w-4" />}
+                  label={site.email}
+                />
               </li>
               <li>
-                <a
+                <ConnectLink
                   href={site.linkedin}
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="group flex items-center gap-3 text-sm text-charcoal/75 transition-colors hover:text-gold"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold">
-                    <IconLinkedIn className="h-4 w-4" />
-                  </span>
-                  LinkedIn
-                </a>
+                  icon={<IconLinkedIn className="h-4 w-4" />}
+                  label="LinkedIn"
+                  external
+                />
               </li>
               <li>
-                <a
+                <ConnectLink
                   href={site.url}
-                  className="group flex items-center gap-3 text-sm text-charcoal/75 transition-colors hover:text-gold"
-                >
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold">
-                    <IconGlobe className="h-4 w-4" />
-                  </span>
-                  {site.url.replace(/^https?:\/\//, "")}
-                </a>
+                  icon={<IconGlobe className="h-4 w-4" />}
+                  label={site.url.replace(/^https?:\/\//, "")}
+                />
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="flex flex-col gap-5 border-t border-ivory-200 py-7 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col items-center gap-3 border-t border-ivory-200 py-6 text-center sm:flex-row sm:items-center sm:justify-between sm:gap-5 sm:py-7 sm:text-left">
           <p className="text-xs text-charcoal/60">
             &copy; {new Date().getFullYear()} {site.legalName}. All rights reserved.
           </p>
-          <ul className="flex flex-wrap gap-x-6 gap-y-2">
+          <ul className="flex flex-wrap justify-center gap-x-5 gap-y-0 sm:justify-end sm:gap-x-6">
             {footerNav.legal.map((link) => (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-xs text-charcoal/60 transition-colors hover:text-gold"
+                  className="inline-block py-2.5 text-xs text-charcoal/60 transition-colors hover:text-gold sm:py-0"
                 >
                   {link.label}
                 </Link>

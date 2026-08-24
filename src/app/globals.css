@@ -62,6 +62,27 @@
   }
 }
 
+@layer utilities {
+  /*
+   * Small inline links (the gold "Learn more ->" style) sit around 19px tall,
+   * well under a comfortable touch target. This grows the tappable area to
+   * roughly 44px using an overlay, so nothing moves on the page. Applied only
+   * where links are visually isolated — stacked lists use real padding
+   * instead, so neighbouring targets cannot overlap.
+   */
+  @media (pointer: coarse) {
+    .tap-expand {
+      position: relative;
+    }
+
+    .tap-expand::after {
+      content: "";
+      position: absolute;
+      inset: -0.75rem -0.5rem;
+    }
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after {

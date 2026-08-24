@@ -100,7 +100,7 @@ export default function FaqPage() {
 
         <div className="mt-12 border-t border-ivory-200 pt-10">
           <h2 className="font-heading text-xl text-navy">Related policies</h2>
-          <ul className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
+          <ul className="mt-3 flex flex-wrap gap-x-8 gap-y-0 sm:mt-5 sm:gap-y-3">
             {[
               { label: "Refund Policy", href: "/refund-policy" },
               { label: "Digital Product Licence & Usage Terms", href: "/licence-terms" },
@@ -110,7 +110,7 @@ export default function FaqPage() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm text-charcoal/70 underline underline-offset-4 transition-colors hover:text-gold"
+                  className="inline-block py-2.5 text-sm text-charcoal/70 underline underline-offset-4 transition-colors hover:text-gold sm:py-0"
                 >
                   {link.label}
                 </Link>
