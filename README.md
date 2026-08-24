@@ -236,6 +236,29 @@ After deploying, submit `https://<domain>/sitemap.xml` in Search Console.
 
 ---
 
+## Static preview (GitHub Pages)
+
+**https://eoforidanso.github.io/AvensraConsulting/** — a static export of the
+marketing and legal pages, for design review only.
+
+GitHub Pages serves static files with no server, so this build necessarily
+excludes everything that needs one: `/api/*`, `/admin`, `/access`,
+`/order/confirmed`. Buy buttons correctly show "Available at launch" (no
+Stripe key in that build), and the three forms fail with a friendly message
+rather than submitting — both are the site's normal behaviour when a backend
+isn't reachable, not something broken about this preview.
+
+This preview lives entirely on the `gh-pages` branch, built from a scratch
+copy with a temporary `output: "export"` config — `main` and its real
+`next.config.ts` (security headers, API routes, dynamic rendering) are
+untouched. **This is not the deployment path for the real site** — see
+Deployment (Vercel) above for that. To refresh the preview after content
+changes, rebuild the same way: copy the repo, strip `src/app/api`, `/admin`,
+`/access`, `/order`, add `output: "export"` + the GitHub Pages `basePath`,
+`next build`, push `out/` to `gh-pages`.
+
+---
+
 ## Ownership (brief §12)
 
 Every account below must be created and owned by Avensra, with developers added
