@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { CorporateForm } from "@/components/forms/CorporateForm";
+import { Reveal } from "@/components/Reveal";
 import {
   Section,
   SectionHeading,
@@ -57,9 +58,10 @@ export default function CorporateExperiencesPage() {
         />
 
         <div className="grid gap-px border border-ivory-200 bg-ivory-200 sm:grid-cols-2 lg:grid-cols-4">
-          {experiences.map((experience) => (
-            <div
+          {experiences.map((experience, index) => (
+            <Reveal
               key={experience.id}
+              delay={index * 90}
               className={`flex flex-col bg-white px-7 py-9 ${
                 experience.featured ? "ring-1 ring-inset ring-gold/40" : ""
               }`}
@@ -117,7 +119,7 @@ export default function CorporateExperiencesPage() {
                   </>
                 )}
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
 
@@ -146,30 +148,34 @@ export default function CorporateExperiencesPage() {
           </div>
 
           <div className="grid gap-6 sm:grid-cols-2">
-            <Card tone="navy" className="p-7">
-              <IconCircle size="sm">
-                <IconPeople className="h-5 w-5" />
-              </IconCircle>
-              <h3 className="mt-5 font-body text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white">
-                Up to 20 participants
-              </h3>
-              <p className="mt-2 text-[0.88rem] leading-relaxed text-white/65">
-                Small enough that people actually speak. For 21 or more we design a custom
-                format.
-              </p>
-            </Card>
-            <Card tone="navy" className="p-7">
-              <IconCircle size="sm">
-                <IconGlobe className="h-5 w-5" />
-              </IconCircle>
-              <h3 className="mt-5 font-body text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white">
-                In person or online
-              </h3>
-              <p className="mt-2 text-[0.88rem] leading-relaxed text-white/65">
-                Both formats are designed properly. The online version is not a compromise
-                of the in-person one.
-              </p>
-            </Card>
+            <Reveal>
+              <Card tone="navy" className="h-full p-7">
+                <IconCircle size="sm">
+                  <IconPeople className="h-5 w-5" />
+                </IconCircle>
+                <h3 className="mt-5 font-body text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white">
+                  Up to 20 participants
+                </h3>
+                <p className="mt-2 text-[0.88rem] leading-relaxed text-white/65">
+                  Small enough that people actually speak. For 21 or more we design a custom
+                  format.
+                </p>
+              </Card>
+            </Reveal>
+            <Reveal delay={100}>
+              <Card tone="navy" className="h-full p-7">
+                <IconCircle size="sm">
+                  <IconGlobe className="h-5 w-5" />
+                </IconCircle>
+                <h3 className="mt-5 font-body text-[0.7rem] font-bold uppercase tracking-[0.12em] text-white">
+                  In person or online
+                </h3>
+                <p className="mt-2 text-[0.88rem] leading-relaxed text-white/65">
+                  Both formats are designed properly. The online version is not a compromise
+                  of the in-person one.
+                </p>
+              </Card>
+            </Reveal>
           </div>
         </div>
       </Section>
@@ -189,23 +195,25 @@ export default function CorporateExperiencesPage() {
             </IconCircle>
           </div>
 
-          <Card tone="white" className="p-8 sm:p-10">
-            <h3 className="font-heading text-xl text-navy">A corporate licence covers</h3>
-            <Rule className="my-4" />
-            <ul className="space-y-3 text-charcoal/85">
-              {licensingBenefits.map((benefit) => (
-                <Bullet key={benefit}>{benefit}</Bullet>
-              ))}
-            </ul>
-            <p className="mt-7 border-t border-ivory-200 pt-6 text-[0.9rem] leading-relaxed text-charcoal/70">
-              Licences are quoted per organisation based on participant volumes, duration
-              and territory. Enquiries, quotations, participant lists, invoicing and licence
-              administration are handled directly by Avensra.
-            </p>
-            <ButtonLink href="#enquiry" variant="navy" className="mt-7">
-              Request licensing details <Arrow />
-            </ButtonLink>
-          </Card>
+          <Reveal>
+            <Card tone="white" className="p-8 sm:p-10">
+              <h3 className="font-heading text-xl text-navy">A corporate licence covers</h3>
+              <Rule className="my-4" />
+              <ul className="space-y-3 text-charcoal/85">
+                {licensingBenefits.map((benefit) => (
+                  <Bullet key={benefit}>{benefit}</Bullet>
+                ))}
+              </ul>
+              <p className="mt-7 border-t border-ivory-200 pt-6 text-[0.9rem] leading-relaxed text-charcoal/70">
+                Licences are quoted per organisation based on participant volumes, duration
+                and territory. Enquiries, quotations, participant lists, invoicing and
+                licence administration are handled directly by Avensra.
+              </p>
+              <ButtonLink href="#enquiry" variant="navy" className="mt-7">
+                Request licensing details <Arrow />
+              </ButtonLink>
+            </Card>
+          </Reveal>
         </div>
       </Section>
 
@@ -231,9 +239,11 @@ export default function CorporateExperiencesPage() {
             </div>
           </div>
 
-          <Card tone="ivory" className="p-8 sm:p-10">
-            <CorporateForm />
-          </Card>
+          <Reveal>
+            <Card tone="ivory" className="p-8 sm:p-10">
+              <CorporateForm />
+            </Card>
+          </Reveal>
         </div>
       </Section>
     </>

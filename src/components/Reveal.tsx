@@ -11,6 +11,13 @@ import { useEffect, useRef, useState, type ReactNode, type CSSProperties } from 
  * confirmed to be below the fold at mount time — so SSR output, no-JS
  * browsers, and the instant before hydration all show full content. Users
  * who prefer reduced motion never get the hidden state at all.
+ *
+ * The hidden pre-state is only entered while the document is actually
+ * visible. IntersectionObserver delivers its callbacks from the rendering
+ * steps, which a hidden document does not run — so hiding content in a
+ * background tab would stake the only route back to visible on a callback
+ * that may never arrive. A page mounted in a background tab therefore just
+ * shows its content: no entrance animation, but never a blank section.
  */
 export function Reveal({
   children,
@@ -21,15 +28,17 @@ export function Reveal({
   children: ReactNode;
   className?: string;
   delay?: number;
-  as?: "div" | "li";
+  as?: "div" | "li" | "article";
 }) {
-  const ref = useRef<HTMLDivElement | HTMLLIElement>(null);
+  const ref = useRef<HTMLDivElement | HTMLLIElement | HTMLElement>(null);
   const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    // See the note above: never hide content a hidden document cannot reveal.
+    if (document.visibilityState !== "visible") return;
 
     // Already in (or past) the viewport at mount — nothing to reveal.
     const rect = el.getBoundingClientRect();

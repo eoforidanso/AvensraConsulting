@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { Reveal } from "@/components/Reveal";
 import { Section, Card, IconCircle, LinkArrow, Rule } from "@/components/ui";
 import { IconMail, IconClock, IconLinkedIn, IconPeople } from "@/components/icons";
 import { site } from "@/lib/site";
@@ -29,13 +30,15 @@ export default function ContactPage() {
 
       <Section tone="white">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-          <Card tone="ivory" className="p-8 sm:p-10">
-            <h2 className="font-heading text-2xl text-navy">Send us a message</h2>
-            <Rule className="my-5" />
-            <ContactForm />
-          </Card>
+          <Reveal>
+            <Card tone="ivory" className="p-8 sm:p-10">
+              <h2 className="font-heading text-2xl text-navy">Send us a message</h2>
+              <Rule className="my-5" />
+              <ContactForm />
+            </Card>
+          </Reveal>
 
-          <div className="space-y-8">
+          <Reveal delay={100} className="space-y-8">
             <div>
               <h2 className="font-heading text-2xl text-navy">Other ways to reach us</h2>
               <Rule className="my-5" />
@@ -126,7 +129,7 @@ export default function ContactPage() {
                 </div>
               </div>
             </Card>
-          </div>
+          </Reveal>
         </div>
       </Section>
     </>

@@ -30,22 +30,34 @@ export function PageHero({
             which floats over this section rather than pushing it down. */}
         <div className="max-w-3xl pt-28 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-24">
           {eyebrow ? (
-            <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+            <p className="hero-rise mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
               {eyebrow}
             </p>
           ) : null}
-          <h1 className="text-3xl leading-[1.12] text-white sm:text-4xl lg:text-[3rem]">
+          <h1
+            className="hero-rise text-3xl leading-[1.12] text-white sm:text-4xl lg:text-[3rem]"
+            style={{ animationDelay: "70ms" }}
+          >
             {title}
           </h1>
           {lead ? (
             <>
-              <Rule />
-              <p className="max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
+              <div className="hero-rise" style={{ animationDelay: "140ms" }}>
+                <Rule />
+              </div>
+              <p
+                className="hero-rise max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg"
+                style={{ animationDelay: "140ms" }}
+              >
                 {lead}
               </p>
             </>
           ) : null}
-          {children ? <div className="mt-9">{children}</div> : null}
+          {children ? (
+            <div className="hero-rise mt-9" style={{ animationDelay: "230ms" }}>
+              {children}
+            </div>
+          ) : null}
         </div>
       </Container>
     </section>

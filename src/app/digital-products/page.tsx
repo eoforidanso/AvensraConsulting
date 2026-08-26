@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { ProductVisual } from "@/components/ProductVisual";
 import { BuyButton } from "@/components/BuyButton";
+import { Reveal } from "@/components/Reveal";
 import {
   Section,
   SectionHeading,
@@ -76,7 +77,8 @@ export default function DigitalProductsPage() {
       <Section tone="white">
         <div className="space-y-16 lg:space-y-20">
           {products.map((product, index) => (
-            <article
+            <Reveal
+              as="article"
               key={product.slug}
               className={`grid items-center gap-10 lg:grid-cols-2 lg:gap-16 ${
                 index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
@@ -136,7 +138,7 @@ export default function DigitalProductsPage() {
                   </p>
                 ) : null}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -148,35 +150,37 @@ export default function DigitalProductsPage() {
           className="mb-14"
         />
         <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
-          {howItWorks.map(({ icon: Icon, title, body }) => (
-            <div key={title}>
+          {howItWorks.map(({ icon: Icon, title, body }, index) => (
+            <Reveal key={title} delay={index * 100}>
               <IconCircle>
                 <Icon className="h-7 w-7" />
               </IconCircle>
               <h3 className="mt-6 font-heading text-xl text-navy">{title}</h3>
               <p className="mt-3 text-[0.95rem] leading-relaxed text-charcoal/75">{body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
-        <Card tone="white" className="mt-12 p-8 sm:p-10">
-          <h3 className="font-heading text-xl text-navy">
-            Buying for a team, or want to use these with clients?
-          </h3>
-          <p className="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-charcoal/75">
-            A standard purchase is a single-user licence. If you need access for a team, or
-            want to facilitate sessions using Avensra material, a corporate licence is the
-            right route &mdash; and usually better value.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href="/corporate-experiences#licensing" variant="navy">
-              Corporate licensing <Arrow />
-            </ButtonLink>
-            <ButtonLink href="/licence-terms" variant="outline">
-              Read the licence terms
-            </ButtonLink>
-          </div>
-        </Card>
+        <Reveal delay={90}>
+          <Card tone="white" className="mt-12 p-8 sm:p-10">
+            <h3 className="font-heading text-xl text-navy">
+              Buying for a team, or want to use these with clients?
+            </h3>
+            <p className="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-charcoal/75">
+              A standard purchase is a single-user licence. If you need access for a team, or
+              want to facilitate sessions using Avensra material, a corporate licence is the
+              right route &mdash; and usually better value.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <ButtonLink href="/corporate-experiences#licensing" variant="navy">
+                Corporate licensing <Arrow />
+              </ButtonLink>
+              <ButtonLink href="/licence-terms" variant="outline">
+                Read the licence terms
+              </ButtonLink>
+            </div>
+          </Card>
+        </Reveal>
       </Section>
     </>
   );

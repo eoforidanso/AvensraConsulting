@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero } from "@/components/PageHero";
 import { FaqSearch } from "@/components/FaqSearch";
+import { Reveal } from "@/components/Reveal";
 import { Section, Card, ButtonLink, IconCircle, Arrow } from "@/components/ui";
 import { IconMail, IconClock, IconLock } from "@/components/icons";
 import { faqIndex } from "@/content/faq";
@@ -49,53 +50,59 @@ export default function FaqPage() {
 
       <Section tone="ivory">
         <div className="grid gap-8 lg:grid-cols-3">
-          <Card tone="white" className="flex flex-col p-8">
-            <IconCircle size="sm">
-              <IconClock className="h-5 w-5" />
-            </IconCircle>
-            <h2 className="mt-5 font-heading text-xl text-navy">
-              Seven-day technical support
-            </h2>
-            <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
-              Every purchase of the Business-to-People Alignment System&trade; includes
-              seven days of technical support from the date of purchase, covering licence
-              activation, secure viewer installation and access problems.
-            </p>
-          </Card>
+          <Reveal>
+            <Card tone="white" className="flex h-full flex-col p-8">
+              <IconCircle size="sm">
+                <IconClock className="h-5 w-5" />
+              </IconCircle>
+              <h2 className="mt-5 font-heading text-xl text-navy">
+                Seven-day technical support
+              </h2>
+              <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
+                Every purchase of the Business-to-People Alignment System&trade; includes
+                seven days of technical support from the date of purchase, covering licence
+                activation, secure viewer installation and access problems.
+              </p>
+            </Card>
+          </Reveal>
 
-          <Card tone="white" className="flex flex-col p-8">
-            <IconCircle size="sm">
-              <IconLock className="h-5 w-5" />
-            </IconCircle>
-            <h2 className="mt-5 font-heading text-xl text-navy">Access problems</h2>
-            <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
-              Lost your link, changed device, or the viewer will not open your file? Email
-              us from the address you bought with and quote your order reference &mdash; we
-              can reissue access or move your licence.
-            </p>
-          </Card>
+          <Reveal delay={100}>
+            <Card tone="white" className="flex h-full flex-col p-8">
+              <IconCircle size="sm">
+                <IconLock className="h-5 w-5" />
+              </IconCircle>
+              <h2 className="mt-5 font-heading text-xl text-navy">Access problems</h2>
+              <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
+                Lost your link, changed device, or the viewer will not open your file? Email
+                us from the address you bought with and quote your order reference &mdash;
+                we can reissue access or move your licence.
+              </p>
+            </Card>
+          </Reveal>
 
-          <Card tone="white" className="flex flex-col p-8">
-            <IconCircle size="sm">
-              <IconMail className="h-5 w-5" />
-            </IconCircle>
-            <h2 className="mt-5 font-heading text-xl text-navy">Still stuck?</h2>
-            <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
-              Write to{" "}
-              <a
-                href={`mailto:${site.supportEmail}`}
-                className="text-gold underline underline-offset-2"
-              >
-                {site.supportEmail}
-              </a>{" "}
-              or use the contact form. We aim to respond within one business day.
-            </p>
-            <div className="mt-auto pt-6">
-              <ButtonLink href="/contact" variant="navy">
-                Contact support <Arrow />
-              </ButtonLink>
-            </div>
-          </Card>
+          <Reveal delay={200}>
+            <Card tone="white" className="flex h-full flex-col p-8">
+              <IconCircle size="sm">
+                <IconMail className="h-5 w-5" />
+              </IconCircle>
+              <h2 className="mt-5 font-heading text-xl text-navy">Still stuck?</h2>
+              <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
+                Write to{" "}
+                <a
+                  href={`mailto:${site.supportEmail}`}
+                  className="text-gold underline underline-offset-2"
+                >
+                  {site.supportEmail}
+                </a>{" "}
+                or use the contact form. We aim to respond within one business day.
+              </p>
+              <div className="mt-auto pt-6">
+                <ButtonLink href="/contact" variant="navy">
+                  Contact support <Arrow />
+                </ButtonLink>
+              </div>
+            </Card>
+          </Reveal>
         </div>
 
         <div className="mt-12 border-t border-ivory-200 pt-10">

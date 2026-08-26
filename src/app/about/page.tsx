@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 import {
   Section,
   SectionHeading,
@@ -118,15 +119,15 @@ export default function AboutPage() {
           className="mb-14"
         />
         <div className="grid gap-10 lg:grid-cols-3 lg:gap-12">
-          {principles.map(({ icon: Icon, title, body }) => (
-            <div key={title}>
+          {principles.map(({ icon: Icon, title, body }, index) => (
+            <Reveal key={title} delay={index * 100}>
               <IconCircle>
                 <Icon className="h-7 w-7" />
               </IconCircle>
               <h3 className="mt-6 font-heading text-xl text-navy">{title}</h3>
               <Rule className="my-4" />
               <p className="text-[0.95rem] leading-relaxed text-charcoal/75">{body}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -140,8 +141,8 @@ export default function AboutPage() {
           className="mb-14"
         />
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
-          {values.map(({ icon: Icon, title, body }) => (
-            <div key={title} className="flex gap-5">
+          {values.map(({ icon: Icon, title, body }, index) => (
+            <Reveal key={title} delay={index * 90} className="flex gap-5">
               <IconCircle size="sm">
                 <Icon className="h-5 w-5" />
               </IconCircle>
@@ -151,13 +152,13 @@ export default function AboutPage() {
                 </h3>
                 <p className="mt-2 text-[0.9rem] leading-relaxed text-white/65">{body}</p>
               </div>
-            </div>
+            </Reveal>
           ))}
         </div>
       </Section>
 
       <Section tone="ivory" size="compact">
-        <div className="flex flex-col items-center gap-8 bg-white px-8 py-12 text-center sm:px-12 lg:flex-row lg:justify-between lg:text-left">
+        <Reveal className="flex flex-col items-center gap-8 bg-white px-8 py-12 text-center sm:px-12 lg:flex-row lg:justify-between lg:text-left">
           <div>
             <h2 className="font-heading text-2xl leading-tight text-navy sm:text-[1.9rem]">
               Let&rsquo;s talk about what alignment would change for you
@@ -170,7 +171,7 @@ export default function AboutPage() {
           <ButtonLink href="/contact" variant="gold" className="shrink-0 px-9 py-4">
             Get in touch <Arrow />
           </ButtonLink>
-        </div>
+        </Reveal>
       </Section>
     </>
   );

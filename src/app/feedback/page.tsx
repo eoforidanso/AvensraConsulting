@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
 import { FeedbackForm } from "@/components/forms/FeedbackForm";
+import { Reveal } from "@/components/Reveal";
 import { Section, Card, Rule } from "@/components/ui";
 
 export const metadata: Metadata = {
@@ -27,13 +28,15 @@ export default function FeedbackPage() {
 
       <Section tone="white">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr] lg:gap-16">
-          <Card tone="ivory" className="p-8 sm:p-10">
-            <h2 className="font-heading text-2xl text-navy">Your feedback</h2>
-            <Rule className="my-5" />
-            <FeedbackForm />
-          </Card>
+          <Reveal>
+            <Card tone="ivory" className="p-8 sm:p-10">
+              <h2 className="font-heading text-2xl text-navy">Your feedback</h2>
+              <Rule className="my-5" />
+              <FeedbackForm />
+            </Card>
+          </Reveal>
 
-          <div className="space-y-6">
+          <Reveal delay={100} className="space-y-6">
             <Card tone="ivory" className="p-7">
               <h3 className="font-heading text-lg text-navy">
                 Nothing is published automatically
@@ -64,7 +67,7 @@ export default function FeedbackPage() {
                 and choose Product support.
               </p>
             </Card>
-          </div>
+          </Reveal>
         </div>
       </Section>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/PageHero";
+import { Reveal } from "@/components/Reveal";
 import {
   Section,
   SectionHeading,
@@ -129,20 +130,22 @@ export default function ConsultingPage() {
         />
 
         <div className="grid gap-8 lg:grid-cols-2">
-          {services.map(({ icon: Icon, title, body, points }) => (
-            <Card key={title} tone="ivory" className="flex flex-col p-8 lg:p-10">
-              <IconCircle>
-                <Icon className="h-7 w-7" />
-              </IconCircle>
-              <h2 className="mt-6 font-heading text-2xl text-navy">{title}</h2>
-              <Rule className="my-4" />
-              <p className="text-[0.95rem] leading-relaxed text-charcoal/75">{body}</p>
-              <ul className="mt-6 space-y-2.5 text-charcoal/85">
-                {points.map((point) => (
-                  <Bullet key={point}>{point}</Bullet>
-                ))}
-              </ul>
-            </Card>
+          {services.map(({ icon: Icon, title, body, points }, index) => (
+            <Reveal key={title} delay={(index % 2) * 100}>
+              <Card tone="ivory" className="flex h-full flex-col p-8 lg:p-10">
+                <IconCircle>
+                  <Icon className="h-7 w-7" />
+                </IconCircle>
+                <h2 className="mt-6 font-heading text-2xl text-navy">{title}</h2>
+                <Rule className="my-4" />
+                <p className="text-[0.95rem] leading-relaxed text-charcoal/75">{body}</p>
+                <ul className="mt-6 space-y-2.5 text-charcoal/85">
+                  {points.map((point) => (
+                    <Bullet key={point}>{point}</Bullet>
+                  ))}
+                </ul>
+              </Card>
+            </Reveal>
           ))}
         </div>
       </Section>
@@ -155,20 +158,20 @@ export default function ConsultingPage() {
           className="mb-14"
         />
         <ol className="grid gap-px bg-white/12 sm:grid-cols-2 lg:grid-cols-4">
-          {approach.map(({ step, title, body }) => (
-            <li key={step} className="bg-navy px-7 py-9">
+          {approach.map(({ step, title, body }, index) => (
+            <Reveal key={step} as="li" delay={index * 90} className="bg-navy px-7 py-9">
               <span className="font-heading text-4xl text-gold/45">{step}</span>
               <h3 className="mt-4 font-body text-[0.75rem] font-bold uppercase tracking-[0.13em] text-white">
                 {title}
               </h3>
               <p className="mt-3 text-[0.88rem] leading-relaxed text-white/65">{body}</p>
-            </li>
+            </Reveal>
           ))}
         </ol>
       </Section>
 
       <Section tone="ivory">
-        <div className="grid gap-10 border border-ivory-200 bg-white p-9 sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
+        <Reveal className="grid gap-10 border border-ivory-200 bg-white p-9 sm:p-12 lg:grid-cols-[1.4fr_1fr] lg:items-center lg:gap-16">
           <div>
             <SectionHeading
               eyebrow="Not ready for an engagement?"
@@ -185,7 +188,7 @@ export default function ConsultingPage() {
               Talk to us first
             </ButtonLink>
           </div>
-        </div>
+        </Reveal>
       </Section>
     </>
   );
