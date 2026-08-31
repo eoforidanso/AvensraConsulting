@@ -10,7 +10,6 @@ import {
   ButtonLink,
   LinkArrow,
   IconCircle,
-  Check,
   Rule,
   Eyebrow,
   Arrow,
@@ -29,6 +28,7 @@ import {
 } from "@/components/icons";
 import { products, formatUsd } from "@/content/products";
 import { experiences } from "@/content/experiences";
+import { advisoryServices, consultingIntro } from "@/content/consulting";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -41,13 +41,6 @@ const pillars = [
   { icon: IconStrategy, title: "Strategy", sub: "that clarifies" },
   { icon: IconPeople, title: "People", sub: "that deliver" },
   { icon: IconPerformance, title: "Performance", sub: "that lasts" },
-];
-
-const consultingAreas = [
-  "Strategy & Business Alignment",
-  "Organisation Design & Effectiveness",
-  "Leadership & People Alignment",
-  "Performance & Change",
 ];
 
 const trustSignals = [
@@ -149,20 +142,28 @@ export default function HomePage() {
                 <IconStrategy className="h-7 w-7" />
               </IconCircle>
               <h2 className="mt-6 flex min-h-[3.7rem] items-start justify-center text-center font-heading text-[1.45rem] leading-tight tracking-[0.02em] text-balance text-navy xl:text-[1.6rem]">
-                CONSULTING
+                CONSULTING &amp; ADVISORY
               </h2>
               <p className="mt-4 text-center text-[0.95rem] leading-relaxed text-charcoal/75">
-                Strategy, alignment and performance solutions that turn your vision into
-                measurable results.
+                {consultingIntro}
               </p>
-              <ul className="mt-7 space-y-3">
-                {consultingAreas.map((area) => (
-                  <li key={area} className="flex items-start gap-3">
-                    <Check className="mt-0.5 text-gold" />
-                    <span className="text-[0.92rem] text-charcoal/85">{area}</span>
+
+              {/* Concise summary only — one line each, no full service
+                  descriptions. Detail lives on /consulting and the
+                  Executive Career Positioning page. */}
+              <ul className="mt-7 space-y-5">
+                {advisoryServices.map((service) => (
+                  <li key={service.slug}>
+                    <p className="font-body text-[0.78rem] font-bold uppercase tracking-[0.06em] text-navy">
+                      {service.name}
+                    </p>
+                    <p className="mt-1.5 text-[0.85rem] leading-relaxed text-charcoal/70">
+                      {service.tagline}
+                    </p>
                   </li>
                 ))}
               </ul>
+
               <div className="mt-auto pt-9">
                 <ButtonLink href="/consulting" variant="navy" className="w-full sm:w-auto">
                   Explore Consulting <Arrow />

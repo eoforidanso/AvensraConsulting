@@ -227,17 +227,23 @@ export function Card({
   children,
   className = "",
   tone = "white",
+  id,
 }: {
   children: ReactNode;
   className?: string;
   tone?: "white" | "ivory" | "navy";
+  id?: string;
 }) {
   const tones = {
     white: "bg-white border-ivory-200",
     ivory: "bg-ivory border-ivory-200",
     navy: "bg-navy-700 border-white/10 text-white",
   };
-  return <div className={`border ${tones[tone]} ${className}`}>{children}</div>;
+  return (
+    <div id={id} className={`border ${tones[tone]} ${className}`}>
+      {children}
+    </div>
+  );
 }
 
 /** Gold circle enclosing a line icon — the artwork's signature motif. */

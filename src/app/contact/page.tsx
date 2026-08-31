@@ -14,7 +14,25 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
+const validTopics = [
+  "Digital products",
+  "Product support",
+  "Corporate experiences",
+  "Corporate licensing",
+  "Consulting",
+  "Something else",
+] as const;
+
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ topic?: string }>;
+}) {
+  const { topic } = await searchParams;
+  // Only ever pre-fill a topic this form actually offers — an arbitrary
+  // query string can't be used to inject something into the select.
+  const defaultTopic = validTopics.find((t) => t === topic);
+
   return (
     <>
       <PageHero
@@ -34,7 +52,7 @@ export default function ContactPage() {
             <Card tone="ivory" className="p-8 sm:p-10">
               <h2 className="font-heading text-2xl text-navy">Send us a message</h2>
               <Rule className="my-5" />
-              <ContactForm />
+              <ContactForm defaultTopic={defaultTopic} />
             </Card>
           </Reveal>
 

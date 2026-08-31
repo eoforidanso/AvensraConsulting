@@ -27,7 +27,27 @@ export type NavItem = {
 export const primaryNav: NavItem[] = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
-  { label: "Consulting", href: "/consulting" },
+  {
+    // Short in the nav by design — "Consulting & Advisory" is the full name
+    // used on the page itself, but at 22 characters plus a dropdown chevron
+    // it was wide enough to push "Contact Us" off-screen at 1440px, a very
+    // common laptop width. Verified against the nav's actual rendered width
+    // before shortening, not guessed.
+    label: "Consulting",
+    href: "/consulting",
+    children: [
+      {
+        label: "Executive Career Positioning™",
+        href: "/executive-career-positioning",
+        description: "One-to-one advisory for senior leadership and executive opportunities.",
+      },
+      {
+        label: "Business-to-People Advisory Support",
+        href: "/consulting#business-to-people-advisory-support",
+        description: "Expert guidance for Alignment System purchasers refining their people strategy.",
+      },
+    ],
+  },
   {
     label: "Digital Products",
     href: "/digital-products",
@@ -78,6 +98,10 @@ export const footerNav = {
     { label: "Contact Us", href: "/contact" },
   ],
   solutions: [
+    {
+      label: "Executive Career Positioning™",
+      href: "/executive-career-positioning",
+    },
     {
       label: "Business-to-People Alignment System™",
       href: "/business-to-people-alignment-system",
