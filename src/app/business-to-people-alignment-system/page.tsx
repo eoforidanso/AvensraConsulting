@@ -13,6 +13,7 @@ import {
   IconCircle,
   Arrow,
   Rule,
+  TM,
 } from "@/components/ui";
 import {
   IconStrategy,
@@ -118,7 +119,10 @@ export default function AlignmentSystemPage() {
                 style={{ animationDelay: "70ms" }}
               >
                 Business-to-People
-                <span className="block text-gold">Alignment System&trade;</span>
+                <span className="block text-gold">
+                  Alignment System
+                  <TM />
+                </span>
               </h1>
               <div className="hero-rise" style={{ animationDelay: "140ms" }}>
                 <Rule />

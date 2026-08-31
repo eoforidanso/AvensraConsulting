@@ -13,6 +13,7 @@ import {
   IconCircle,
   Arrow,
   Rule,
+  TM,
 } from "@/components/ui";
 import { IconClock, IconPeople, IconProduct, IconLicence } from "@/components/icons";
 import { getProduct, formatUsd } from "@/content/products";
@@ -104,7 +105,10 @@ export default function ExecutiveResetPage() {
                 style={{ animationDelay: "70ms" }}
               >
                 The Executive
-                <span className="block text-gold">Reset&trade;</span>
+                <span className="block text-gold">
+                  Reset
+                  <TM />
+                </span>
               </h1>
               <p
                 className="hero-rise mt-4 font-heading text-lg italic leading-snug text-white/85"

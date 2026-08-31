@@ -10,6 +10,7 @@ import {
   Bullet,
   Arrow,
   Rule,
+  TM,
 } from "@/components/ui";
 import { IconTarget, IconProduct, IconGlobe, IconStrategy } from "@/components/icons";
 import { executiveCareerPositioning as ecp } from "@/content/consulting";
@@ -53,7 +54,10 @@ export default function ExecutiveCareerPositioningPage() {
         title={
           <>
             Executive Career
-            <span className="block text-gold">Positioning&trade;</span>
+            <span className="block text-gold">
+              Positioning
+              <TM />
+            </span>
           </>
         }
         lead={ecp.tagline}

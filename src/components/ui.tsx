@@ -128,6 +128,29 @@ export function SectionHeading({
   );
 }
 
+/**
+ * Trademark mark for display headings.
+ *
+ * Playfair Display draws ™ at roughly 1.75x the width of a capital letter,
+ * which reads as heavy and unrefined at hero sizes (48px+). This renders it
+ * small and raised, the way it is set in editorial and luxury typography,
+ * without changing the accessible text — screen readers still announce the
+ * trademark because it stays a real ™ character in the DOM.
+ *
+ * Only worth using in large display type. At body size the default glyph is
+ * already correctly proportioned, so leave those as plain &trade;.
+ */
+export function TM({ className = "" }: { className?: string }) {
+  return (
+    <span
+      className={`align-super text-[0.32em] tracking-normal ${className}`}
+      style={{ lineHeight: 1 }}
+    >
+      &trade;
+    </span>
+  );
+}
+
 export function Rule({ className = "" }: { className?: string }) {
   return <span className={`my-6 block h-px w-16 bg-gold ${className}`} aria-hidden="true" />;
 }
