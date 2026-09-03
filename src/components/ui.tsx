@@ -163,8 +163,8 @@ export function Rule({ className = "" }: { className?: string }) {
 type ButtonVariant = "gold" | "navy" | "outline" | "outline-light" | "ghost";
 
 const variants: Record<ButtonVariant, string> = {
-  gold: "bg-gold text-navy hover:bg-gold-400 border border-gold hover:border-gold-400 hover:shadow-[0_16px_30px_-14px_rgba(199,154,68,0.6)]",
-  navy: "bg-navy text-white hover:bg-navy-700 border border-navy hover:border-navy-700 hover:shadow-[0_16px_30px_-14px_rgba(13,27,51,0.5)]",
+  gold: "bg-gold text-navy hover:bg-gold-400 border border-gold hover:border-gold-400 hover:shadow-[0_16px_30px_-14px_rgba(193,135,76,0.6)]",
+  navy: "bg-navy text-white hover:bg-navy-700 border border-navy hover:border-navy-700 hover:shadow-[0_16px_30px_-14px_rgba(9,19,32,0.5)]",
   outline: "border border-navy/25 text-navy hover:border-gold hover:text-goldink bg-transparent",
   "outline-light":
     "border border-white/35 text-white hover:border-gold hover:text-goldink bg-transparent",

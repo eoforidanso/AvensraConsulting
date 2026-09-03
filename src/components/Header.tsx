@@ -144,7 +144,7 @@ export function Header() {
                           : "pointer-events-none -translate-y-1.5 opacity-0"
                       }`}
                     >
-                      <div className="border border-ivory-200 bg-white p-2 shadow-[0_18px_50px_-12px_rgba(13,27,51,0.35)]">
+                      <div className="border border-ivory-200 bg-white p-2 shadow-[0_18px_50px_-12px_rgba(9,19,32,0.35)]">
                         {item.children!.map((child) => (
                           <Link
                             key={child.href}
