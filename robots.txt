@@ -1,0 +1,9 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /admin
+Disallow: /access
+Disallow: /order/
+
+Host: https://eoforidanso.github.io/AvensraConsulting
+Sitemap: https://eoforidanso.github.io/AvensraConsulting/sitemap.xml
