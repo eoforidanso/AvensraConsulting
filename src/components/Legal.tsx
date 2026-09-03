@@ -30,7 +30,7 @@ export function LegalPage({
       <section className="bg-navy">
         <Container>
           <div className="max-w-3xl pt-28 pb-14 sm:pt-32 sm:pb-16">
-            <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+            <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
               Legal
             </p>
             <h1 className="text-3xl leading-tight text-white sm:text-4xl">{title}</h1>
@@ -47,7 +47,7 @@ export function LegalPage({
         <Container>
           <div className="grid gap-12 lg:grid-cols-[1fr_3fr] lg:gap-16">
             <nav aria-label="Policies" className="lg:sticky lg:top-28 lg:self-start">
-              <h2 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-gold">
+              <h2 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-goldink">
                 All policies
               </h2>
               <ul className="mt-3 sm:mt-5 sm:space-y-1">
@@ -55,7 +55,7 @@ export function LegalPage({
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="inline-block py-2 text-sm leading-snug text-charcoal/70 transition-colors hover:text-gold sm:py-1"
+                      className="inline-block py-2 text-sm leading-snug text-charcoal/70 transition-colors hover:text-goldink sm:py-1"
                     >
                       {link.label}
                     </Link>
@@ -89,7 +89,7 @@ export function Clause({
   return (
     <section id={id} style={{ scrollMarginTop: "7rem" }} className="mb-11">
       <h2 className="flex gap-3 font-heading text-xl text-navy sm:text-2xl">
-        <span className="text-gold">{n}</span>
+        <span className="text-goldink">{n}</span>
         <span>{title}</span>
       </h2>
       <div className="mt-4 space-y-4 text-[0.97rem] leading-relaxed text-charcoal/80">

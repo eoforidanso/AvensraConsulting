@@ -68,7 +68,7 @@ export default function DigitalProductsPage() {
         title={
           <>
             Practical tools for
-            <span className="block text-gold">everyday alignment</span>
+            <span className="block text-goldink">everyday alignment</span>
           </>
         }
         lead="Systems and experiences you can use yourself — bought once, delivered securely, yours to work with."
@@ -89,7 +89,7 @@ export default function DigitalProductsPage() {
               </div>
 
               <div>
-                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-gold">
+                <p className="text-[0.7rem] font-semibold uppercase tracking-[0.22em] text-goldink">
                   {product.protection === "strong"
                     ? "Protected digital system"
                     : "Guided digital experience"}
@@ -131,7 +131,7 @@ export default function DigitalProductsPage() {
                 {!commerceEnabled ? (
                   <p className="mt-4 text-xs leading-relaxed text-charcoal/55">
                     Online purchasing goes live at launch.{" "}
-                    <Link href="/contact" className="text-gold underline underline-offset-2">
+                    <Link href="/contact" className="text-goldink underline underline-offset-2">
                       Contact us
                     </Link>{" "}
                     in the meantime and we will arrange it directly.

@@ -19,11 +19,14 @@ export function Container({
 
 type SectionTone = "ivory" | "white" | "navy" | "charcoal";
 
+// Grain on the dark tones only: a large flat dark fill is where a screen
+// most obviously reads as a screen, and where the texture does the most
+// work. Light sections already get variation from type and card edges.
 const sectionTones: Record<SectionTone, string> = {
   ivory: "bg-ivory text-charcoal",
   white: "bg-white text-charcoal",
-  navy: "bg-navy text-white",
-  charcoal: "bg-charcoal text-white",
+  navy: "grain bg-navy text-white",
+  charcoal: "grain bg-charcoal text-white",
 };
 
 export function Section({
@@ -74,7 +77,7 @@ export function Eyebrow({
   className?: string;
 }) {
   const color =
-    tone === "gold" ? "text-gold" : tone === "white" ? "text-white/70" : "text-navy/60";
+    tone === "gold" ? "text-goldink" : tone === "white" ? "text-white/70" : "text-navy/60";
   return (
     <p
       className={`text-[0.7rem] font-semibold tracking-[0.24em] uppercase ${color} ${className}`}
@@ -162,10 +165,10 @@ type ButtonVariant = "gold" | "navy" | "outline" | "outline-light" | "ghost";
 const variants: Record<ButtonVariant, string> = {
   gold: "bg-gold text-navy hover:bg-gold-400 border border-gold hover:border-gold-400 hover:shadow-[0_16px_30px_-14px_rgba(199,154,68,0.6)]",
   navy: "bg-navy text-white hover:bg-navy-700 border border-navy hover:border-navy-700 hover:shadow-[0_16px_30px_-14px_rgba(13,27,51,0.5)]",
-  outline: "border border-navy/25 text-navy hover:border-gold hover:text-gold bg-transparent",
+  outline: "border border-navy/25 text-navy hover:border-gold hover:text-goldink bg-transparent",
   "outline-light":
-    "border border-white/35 text-white hover:border-gold hover:text-gold bg-transparent",
-  ghost: "text-gold hover:text-gold-400 border border-transparent px-0 hover:translate-y-0",
+    "border border-white/35 text-white hover:border-gold hover:text-goldink bg-transparent",
+  ghost: "text-goldink hover:text-goldink border border-transparent px-0 hover:translate-y-0",
 };
 
 // A tasteful lift, not a bounce: buttons rise 2px on hover and settle back
@@ -235,7 +238,7 @@ export function LinkArrow({
     <Link
       href={href}
       className={`group tap-expand inline-flex items-center gap-2 text-[0.72rem] font-semibold uppercase tracking-[0.14em] transition-colors duration-300 ease-[var(--ease-glide)] ${
-        tone === "gold" ? "text-gold hover:text-gold-600" : "text-navy hover:text-gold"
+        tone === "gold" ? "text-goldink hover:text-goldink" : "text-navy hover:text-goldink"
       } ${className}`}
     >
       {children}
@@ -257,10 +260,15 @@ export function Card({
   tone?: "white" | "ivory" | "navy";
   id?: string;
 }) {
+  // Dark cards now sit on a real palette step (navy-800) with a palette
+  // border rather than white-at-10%, which was what made stacked dark
+  // surfaces read as one flat plane. Light cards get a whisper of the
+  // warm-tinted lift shadow so they separate from the paper without a
+  // heavy border doing the work.
   const tones = {
-    white: "bg-white border-ivory-200",
-    ivory: "bg-ivory border-ivory-200",
-    navy: "bg-navy-700 border-white/10 text-white",
+    white: "bg-white border-ivory-200 shadow-[var(--shadow-lift)]",
+    ivory: "bg-ivory border-ivory-300",
+    navy: "bg-navy-800 border-navy-600 text-white",
   };
   return (
     <div id={id} className={`border ${tones[tone]} ${className}`}>
@@ -282,7 +290,7 @@ export function IconCircle({
   const dims = size === "sm" ? "h-11 w-11" : "h-16 w-16";
   return (
     <span
-      className={`inline-flex ${dims} shrink-0 items-center justify-center rounded-full border border-gold/45 text-gold transition-[transform,border-color,background-color] duration-500 ease-[var(--ease-glide)] group-hover:-translate-y-0.5 group-hover:border-gold group-hover:bg-gold/10 ${className}`}
+      className={`inline-flex ${dims} shrink-0 items-center justify-center rounded-full border border-gold/45 text-goldink transition-[transform,border-color,background-color] duration-500 ease-[var(--ease-glide)] group-hover:-translate-y-0.5 group-hover:border-gold group-hover:bg-gold/10 ${className}`}
     >
       {children}
     </span>
@@ -308,7 +316,7 @@ export function Check({ className = "" }: { className?: string }) {
 export function Bullet({ children }: { children: ReactNode }) {
   return (
     <li className="flex items-start gap-3">
-      <Check className="mt-1 text-gold" />
+      <Check className="mt-1 text-goldink" />
       <span className="text-[0.95rem] leading-relaxed">{children}</span>
     </li>
   );

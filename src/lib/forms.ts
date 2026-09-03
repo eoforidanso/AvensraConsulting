@@ -67,9 +67,9 @@ export async function handleForm<T extends { honeypot?: string }>(
     .summary(data)
     .map(
       ([label, value]) =>
-        `<tr><td style="padding:8px 16px 8px 0;font-size:13px;color:#6b7280;vertical-align:top;white-space:nowrap;">${esc(
+        `<tr><td style="padding:8px 16px 8px 0;font-size:13px;color:#5b616b;vertical-align:top;white-space:nowrap;">${esc(
           label,
-        )}</td><td style="padding:8px 0;font-size:14px;color:#1b1f24;">${esc(
+        )}</td><td style="padding:8px 0;font-size:14px;color:#1a1c1f;">${esc(
           value,
         ).replace(/\n/g, "<br>")}</td></tr>`,
     )

@@ -78,7 +78,7 @@ export default function HomePage() {
           <div className="max-w-2xl pt-28 pb-20 sm:pt-32 sm:pb-28 lg:pt-44 lg:pb-36">
             <h1 className="hero-rise text-[2.75rem] leading-[1.06] tracking-[-0.015em] text-white sm:text-5xl lg:text-[4rem] xl:text-[4.5rem]">
               Strategy is important.
-              <span className="mt-1 block text-gold">Alignment is everything.</span>
+              <span className="mt-1 block text-goldink">Alignment is everything.</span>
             </h1>
 
             <div className="hero-rise" style={{ animationDelay: "120ms" }}>
@@ -116,7 +116,7 @@ export default function HomePage() {
                     index > 0 ? "xs:border-l xs:border-white/15 xs:pl-5" : ""
                   }`}
                 >
-                  <Icon className="h-7 w-7 shrink-0 text-gold" />
+                  <Icon className="h-7 w-7 shrink-0 text-goldink" />
                   <div>
                     <dt className="text-[0.72rem] font-semibold uppercase tracking-[0.16em] text-white">
                       {title}
@@ -214,7 +214,7 @@ export default function HomePage() {
               <div className="mt-auto pt-9">
                 <Link
                   href="/digital-products"
-                  className="flex w-full items-center justify-center gap-2 border border-gold/50 px-6 py-3.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-gold transition-all duration-300 ease-[var(--ease-glide)] hover:-translate-y-0.5 hover:bg-gold hover:text-navy"
+                  className="flex w-full items-center justify-center gap-2 border border-gold/50 px-6 py-3.5 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-goldink transition-all duration-300 ease-[var(--ease-glide)] hover:-translate-y-0.5 hover:bg-gold hover:text-navy"
                 >
                   View all digital products <Arrow />
                 </Link>
@@ -242,21 +242,21 @@ export default function HomePage() {
                   <h3 className="font-body text-[0.78rem] font-bold uppercase tracking-[0.08em] text-navy">
                     Avensra-facilitated experiences
                   </h3>
-                  <p className="mt-2 font-heading text-[0.95rem] text-gold">
-                    Release <span className="text-gold/60">&rarr;</span> Reset{" "}
-                    <span className="text-gold/60">&rarr;</span> Reflect{" "}
-                    <span className="text-gold/60">&rarr;</span> Return
+                  <p className="mt-2 font-heading text-[0.95rem] text-goldink">
+                    Release <span className="text-goldink/60">&rarr;</span> Reset{" "}
+                    <span className="text-goldink/60">&rarr;</span> Reflect{" "}
+                    <span className="text-goldink/60">&rarr;</span> Return
                   </p>
                   <ul className="mt-3 space-y-1.5 text-[0.85rem] text-charcoal/75">
                     <li className="flex gap-2">
-                      <span className="text-gold">&bull;</span> Up to 20 participants
+                      <span className="text-goldink">&bull;</span> Up to 20 participants
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-gold">&bull;</span> Choose from 30, 45 or
+                      <span className="text-goldink">&bull;</span> Choose from 30, 45 or
                       60-minute experiences
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-gold">&bull;</span> Led by Avensra for maximum
+                      <span className="text-goldink">&bull;</span> Led by Avensra for maximum
                       impact
                     </li>
                   </ul>
@@ -301,16 +301,16 @@ export default function HomePage() {
         <Container>
           <div className="grid gap-10 lg:grid-cols-[minmax(0,20rem)_1fr] lg:gap-12">
             <Reveal>
-              <h2 className="font-heading text-[1.7rem] leading-tight text-gold">
+              <h2 className="font-heading text-[1.7rem] leading-tight text-goldink">
                 THE EXECUTIVE RESET&trade;
               </h2>
               <p className="mt-3 font-heading text-lg italic leading-snug text-white">
                 A Guided Colouring and Reflection Experience for Busy Professionals
               </p>
-              <p className="mt-4 font-heading text-base text-gold">
-                Release <span className="text-gold/55">&rarr;</span> Reset{" "}
-                <span className="text-gold/55">&rarr;</span> Reflect{" "}
-                <span className="text-gold/55">&rarr;</span> Return
+              <p className="mt-4 font-heading text-base text-goldink">
+                Release <span className="text-goldink/55">&rarr;</span> Reset{" "}
+                <span className="text-goldink/55">&rarr;</span> Reflect{" "}
+                <span className="text-goldink/55">&rarr;</span> Return
               </p>
               <p className="mt-5 text-[0.92rem] leading-relaxed text-white/70">
                 A guided experience that helps busy professionals pause, reset their focus,
@@ -357,7 +357,7 @@ export default function HomePage() {
                           <p className="text-[0.68rem] uppercase tracking-[0.14em] text-white/50">
                             From
                           </p>
-                          <p className="font-heading text-[2rem] leading-none text-gold">
+                          <p className="font-heading text-[2rem] leading-none text-goldink">
                             {formatUsd(experience.fromUsd)}
                           </p>
                           <p className="mt-2 text-[0.72rem] text-white/45">

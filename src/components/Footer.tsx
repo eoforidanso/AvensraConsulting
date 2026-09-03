@@ -20,7 +20,7 @@ function Column({
 }) {
   return (
     <div>
-      <h3 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold">
+      <h3 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-goldink">
         {title}
       </h3>
       <ul className="mt-4 space-y-0 sm:mt-5 sm:space-y-1.5">
@@ -28,7 +28,7 @@ function Column({
           <li key={link.href + link.label}>
             <Link
               href={link.href}
-              className="inline-block py-2.5 text-sm leading-relaxed text-charcoal/75 transition-colors hover:text-gold sm:py-0.5"
+              className="inline-block py-2.5 text-sm leading-relaxed text-charcoal/75 transition-colors hover:text-goldink sm:py-0.5"
             >
               {link.label}
             </Link>
@@ -54,9 +54,9 @@ function ConnectLink({
     <a
       href={href}
       {...(external ? { target: "_blank", rel: "noreferrer noopener" } : {})}
-      className="flex items-center gap-3 py-1.5 text-sm text-charcoal/75 transition-colors hover:text-gold"
+      className="flex items-center gap-3 py-1.5 text-sm text-charcoal/75 transition-colors hover:text-goldink"
     >
-      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-gold">
+      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold/40 text-goldink">
         {icon}
       </span>
       {label}
@@ -80,7 +80,7 @@ export function Footer() {
           <Column title="Solutions" links={footerNav.solutions} />
 
           <div>
-            <h3 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-gold">
+            <h3 className="font-body text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-goldink">
               Connect
             </h3>
             <ul className="mt-4 inline-flex flex-col gap-2 text-left sm:mt-5 sm:flex sm:gap-3">
@@ -119,7 +119,7 @@ export function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-block py-2.5 text-xs text-charcoal/60 transition-colors hover:text-gold sm:py-0"
+                  className="inline-block py-2.5 text-xs text-charcoal/60 transition-colors hover:text-goldink sm:py-0"
                 >
                   {link.label}
                 </Link>

@@ -52,7 +52,7 @@ export function FaqSearch() {
             <li key={category.id}>
               <a
                 href={`#${category.id}`}
-                className="inline-block border border-navy/15 px-4 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.11em] text-navy transition-colors hover:border-gold hover:text-gold sm:py-2"
+                className="inline-block border border-navy/15 px-4 py-2.5 text-[0.68rem] font-semibold uppercase tracking-[0.11em] text-navy transition-colors hover:border-gold hover:text-goldink sm:py-2"
               >
                 {category.title}
               </a>
@@ -74,7 +74,7 @@ export function FaqSearch() {
             <div className="border-l-2 border-gold bg-white p-6">
               <p className="text-[0.95rem] leading-relaxed text-charcoal/80">
                 We could not find that. Try a different word, or{" "}
-                <a href="/contact" className="text-gold underline underline-offset-2">
+                <a href="/contact" className="text-goldink underline underline-offset-2">
                   send us a message
                 </a>{" "}
                 and we will answer directly.
@@ -157,7 +157,7 @@ function Item({
       >
         <span>
           {meta ? (
-            <span className="mb-1.5 block text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-gold">
+            <span className="mb-1.5 block text-[0.62rem] font-semibold uppercase tracking-[0.14em] text-goldink">
               {meta}
             </span>
           ) : null}
@@ -166,7 +166,7 @@ function Item({
           </span>
         </span>
         <IconChevron
-          className={`mt-2 shrink-0 text-gold transition-transform duration-200 ${
+          className={`mt-2 shrink-0 text-goldink transition-transform duration-200 ${
             open ? "rotate-180" : ""
           }`}
         />

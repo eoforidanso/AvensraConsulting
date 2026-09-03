@@ -31,7 +31,7 @@ function Stars({
   return (
     <fieldset>
       <legend className="mb-2 block text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-navy">
-        Overall rating <span className="ml-1 text-gold">*</span>
+        Overall rating <span className="ml-1 text-goldink">*</span>
       </legend>
       <div className="flex items-center gap-1.5">
         {[1, 2, 3, 4, 5].map((star) => (
@@ -45,7 +45,7 @@ function Stars({
           >
             <svg
               viewBox="0 0 24 24"
-              className={`h-7 w-7 ${star <= value ? "text-gold" : "text-navy/20"}`}
+              className={`h-7 w-7 ${star <= value ? "text-goldink" : "text-navy/20"}`}
               fill={star <= value ? "currentColor" : "none"}
               stroke="currentColor"
               strokeWidth="1.3"
@@ -187,7 +187,7 @@ export function FeedbackForm() {
         </Button>
         <p className="text-xs leading-relaxed text-charcoal/55">
           Your feedback is stored securely and handled per our{" "}
-          <a href="/privacy-policy" className="text-gold underline underline-offset-2">
+          <a href="/privacy-policy" className="text-goldink underline underline-offset-2">
             Privacy Policy
           </a>
           .

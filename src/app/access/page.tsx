@@ -98,7 +98,7 @@ export default async function AccessPage({
       <section className="bg-navy">
         <div className="mx-auto w-full max-w-[76rem] px-[var(--shell-x)]">
           <div className="max-w-2xl pt-28 pb-14 sm:pt-32 sm:pb-16">
-            <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+            <p className="mb-4 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
               Your access
             </p>
             <h1 className="font-heading text-3xl leading-tight text-white sm:text-4xl">
@@ -157,7 +157,7 @@ export default async function AccessPage({
                     clients.{" "}
                     <Link
                       href="/corporate-experiences#licensing"
-                      className="text-gold underline underline-offset-2"
+                      className="text-goldink underline underline-offset-2"
                     >
                       Corporate licences
                     </Link>{" "}
@@ -170,7 +170,7 @@ export default async function AccessPage({
                     redistribute it &mdash; see the{" "}
                     <Link
                       href="/licence-terms"
-                      className="text-gold underline underline-offset-2"
+                      className="text-goldink underline underline-offset-2"
                     >
                       Licence Terms
                     </Link>
@@ -194,7 +194,7 @@ export default async function AccessPage({
               {product.supportNote} Email{" "}
               <a
                 href={`mailto:${site.supportEmail}`}
-                className="text-gold underline underline-offset-2"
+                className="text-goldink underline underline-offset-2"
               >
                 {site.supportEmail}
               </a>{" "}

@@ -200,7 +200,7 @@ export default async function OrderConfirmedPage({
               <p className="mt-2 text-[0.88rem] leading-relaxed text-charcoal/70">
                 Issued to you personally. Please keep your access link to yourself &mdash;
                 see the{" "}
-                <Link href="/licence-terms" className="text-gold underline underline-offset-2">
+                <Link href="/licence-terms" className="text-goldink underline underline-offset-2">
                   Licence Terms
                 </Link>
                 .
@@ -217,7 +217,7 @@ export default async function OrderConfirmedPage({
                 Email{" "}
                 <a
                   href={`mailto:${site.supportEmail}`}
-                  className="text-gold underline underline-offset-2"
+                  className="text-goldink underline underline-offset-2"
                 >
                   {site.supportEmail}
                 </a>{" "}

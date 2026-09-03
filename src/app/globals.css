@@ -2,18 +2,60 @@
 
 /* ---------------------------------------------------------------
    Avensra Consulting — brand tokens
-   Hex codes are taken verbatim from the approved artwork sheet.
+
+   The token NAMES are deliberately unchanged (navy / gold / ivory /
+   charcoal) so ~440 usages across the site inherit new values from this
+   one block. The VALUES are a deliberate evolution away from the stock
+   navy-and-yellow-gold every consultancy uses:
+
+     navy    → a deeper, near-black ink with real weight behind it
+     gold    → a warmer bronze; reads as considered rather than shiny
+     ivory   → warm paper stock instead of cool off-white
+     charcoal→ a touch warmer, so body text sits with the paper
+
+   Each colour now carries a proper tonal ramp, so layered surfaces
+   (card on dark, divider on dark) come from the palette rather than
+   from white-with-opacity, which is what made the old dark sections
+   read flat.
    --------------------------------------------------------------- */
 @theme {
-  --color-navy: #0d1b33;
-  --color-navy-700: #16294a;
-  --color-navy-600: #1f3660;
-  --color-gold: #c79a44;
-  --color-gold-400: #d9b370;
-  --color-gold-600: #a67c2c;
-  --color-ivory: #f5f2ee;
-  --color-ivory-200: #ebe6df;
-  --color-charcoal: #1b1f24;
+  /* Ink — authority. Deep enough to feel like a surface, not a fill. */
+  --color-navy: #091320;
+  --color-navy-800: #0e1b2c;
+  --color-navy-700: #142438;
+  --color-navy-600: #1d3049;
+  --color-navy-500: #2a4160;
+
+  /* Bronze — warmer and lower-chroma than the old gold. Expensive
+     metals in print are muted; bright yellow reads as costume.
+     Used for fills, borders and rules, where contrast rules are
+     looser (3:1, and only for meaningful UI). */
+  --color-gold: #c1874c;
+  --color-gold-400: #d9a674;
+  --color-gold-300: #e7c39b;
+  --color-gold-600: #9c6a37;
+
+  /*
+   * Gold TEXT is a separate token, because the same bronze cannot be
+   * legible on both grounds. On paper the bright bronze measures
+   * 2.80:1 — well under the 4.5:1 WCAG AA needs for body text. (The
+   * previous palette was worse still at 2.31:1, so this was a
+   * pre-existing defect, not one the recolour introduced.)
+   *
+   * This defaults to a darker bronze that passes on paper and white,
+   * and is re-brightened inside dark surfaces further down, where the
+   * bright bronze already measures 6.07:1. Same hue family either way,
+   * so the two read as one colour.
+   */
+  --color-goldink: #8f5f30;
+
+  /* Paper — warm bone. Cool off-white made the gold look green. */
+  --color-ivory: #f7f4ee;
+  --color-ivory-200: #ece5d9;
+  --color-ivory-300: #ded4c4;
+
+  --color-charcoal: #1a1c1f;
+  --color-charcoal-600: #40454c;
   --color-white: #ffffff;
 
   --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
@@ -25,11 +67,33 @@
      one signature of unhurried, considered motion instead of every
      component picking its own. Expo-out: fast start, long soft landing. */
   --ease-glide: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Elevation. Warm-tinted rather than neutral black, so shadows sit in
+     the same light as the paper instead of greying it out. */
+  --shadow-lift: 0 18px 40px -24px rgba(9, 19, 32, 0.45);
+  --shadow-raised: 0 28px 60px -28px rgba(9, 19, 32, 0.55);
 }
 
 @layer base {
   :root {
     --shell-x: clamp(1.25rem, 5vw, 4rem);
+  }
+
+  /*
+   * Dark surfaces re-brighten gold text. Plain CSS inheritance does the
+   * work: anything using text-goldink inside one of these picks the
+   * bright bronze up automatically, so no call site has to know which
+   * ground it is sitting on.
+   */
+  /*
+   * Substring match rather than exact class names, because dark surfaces
+   * appear as bg-navy, bg-navy-700, and opacity variants like bg-navy/90
+   * (the header) — all distinct class names that would each need listing.
+   * Matching the stem catches every one, including any added later.
+   */
+  [class*="bg-navy"],
+  [class*="bg-charcoal"] {
+    --color-goldink: var(--color-gold);
   }
 
   html {
@@ -44,14 +108,35 @@
     font-size: 1rem;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Slightly open body tracking — Inter sets tight by default, and at
+       this size a hair of extra space reads calmer and more editorial. */
+    letter-spacing: 0.006em;
   }
 
+  /* Display type tightens as it grows. Playfair's proportions loosen at
+     large sizes, so without this the hero reads airy where it should
+     read deliberate. Applied by size band rather than per-component so
+     the whole site keeps one voice. */
   h1, h2, h3, h4 {
     font-family: var(--font-heading);
     font-weight: 500;
     line-height: 1.15;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.014em;
     color: var(--color-navy);
+    /* Balance ragged headline line-breaks where supported. */
+    text-wrap: balance;
+  }
+
+  h1 {
+    letter-spacing: -0.022em;
+    line-height: 1.06;
+  }
+
+  /* Long-form paragraphs get a slightly narrower measure than the grid
+     would otherwise allow — past ~75 characters the eye loses the line. */
+  p {
+    text-wrap: pretty;
   }
 
   /* Visible, on-brand focus ring for keyboard users. */
@@ -86,6 +171,44 @@
 @layer utilities {
   .hero-rise {
     animation: hero-rise 0.9s var(--ease-glide) both;
+  }
+
+  /*
+   * Paper grain. Large flat fills of a single colour read as "screen";
+   * a barely-perceptible noise layer reads as a material. Kept at ~3.5%
+   * so it registers as texture rather than dirt, and generated inline
+   * from SVG turbulence so it costs no network request.
+   *
+   * pointer-events:none so it never intercepts a click, and it sits
+   * behind content via a negative z-index on the pseudo-element.
+   */
+  .grain {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Hairline gold rule that fades at both ends — used to close sections
+     without the hard stop of a full-width border. */
+  .rule-fade {
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      var(--color-gold) 18%,
+      var(--color-gold) 82%,
+      transparent
+    );
+    opacity: 0.5;
   }
 }
 

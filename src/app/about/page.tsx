@@ -97,7 +97,7 @@ export default function AboutPage() {
           <>
             Strategy that connects.
             <span className="block">People who deliver.</span>
-            <span className="block text-gold">Performance that lasts.</span>
+            <span className="block text-goldink">Performance that lasts.</span>
           </>
         }
         lead="Avensra Consulting is a business and people strategy consultancy helping organisations turn strategic priorities into practical action, stronger organisational capability and measurable performance."
@@ -153,7 +153,7 @@ export default function AboutPage() {
                 <div className="mt-auto pt-7">
                   <Link
                     href={href}
-                    className="tap-expand inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-gold transition-colors duration-300 ease-[var(--ease-glide)] hover:text-gold-600"
+                    className="tap-expand inline-flex items-center gap-2 text-[0.7rem] font-semibold uppercase tracking-[0.14em] text-goldink transition-colors duration-300 ease-[var(--ease-glide)] hover:text-goldink"
                   >
                     {linkLabel}
                     <Arrow className="shrink-0 transition-transform duration-300 ease-[var(--ease-glide)] group-hover:translate-x-1.5" />
@@ -177,7 +177,7 @@ export default function AboutPage() {
       <Section tone="navy">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           <Reveal>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
               Our approach
             </p>
             <h2 className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl">
@@ -234,7 +234,7 @@ export default function AboutPage() {
             <FounderPortrait />
             <div className="mt-8">
               <p className="font-heading text-2xl text-navy">{founder.name}</p>
-              <p className="mt-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-gold">
+              <p className="mt-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-goldink">
                 {founder.role}
               </p>
             </div>
@@ -283,7 +283,7 @@ export default function AboutPage() {
       <Section tone="ivory">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
-            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+            <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
               Why Avensra
             </p>
             <h2 className="mt-5 font-heading text-3xl leading-tight text-navy sm:text-4xl">
@@ -309,7 +309,7 @@ export default function AboutPage() {
             </p>
 
             <p className="mt-8 font-heading text-2xl leading-snug text-navy sm:text-[1.9rem]">
-              Clear strategy. <span className="text-gold">Aligned people.</span> Stronger
+              Clear strategy. <span className="text-goldink">Aligned people.</span> Stronger
               execution.
             </p>
           </Reveal>

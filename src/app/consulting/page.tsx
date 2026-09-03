@@ -32,7 +32,7 @@ export default function ConsultingPage() {
         title={
           <>
             Focused advisory,
-            <span className="block text-gold">built around you</span>
+            <span className="block text-goldink">built around you</span>
           </>
         }
         lead={consultingIntro}

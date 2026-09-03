@@ -28,11 +28,11 @@ export default function TermsPage() {
         <p>
           Two further documents form part of this contract and should be read alongside it:
           our{" "}
-          <Link href="/refund-policy" className="text-gold underline underline-offset-2">
+          <Link href="/refund-policy" className="text-goldink underline underline-offset-2">
             Refund Policy
           </Link>{" "}
           and our{" "}
-          <Link href="/licence-terms" className="text-gold underline underline-offset-2">
+          <Link href="/licence-terms" className="text-goldink underline underline-offset-2">
             Digital Product Licence &amp; Usage Terms
           </Link>
           . Where they conflict with these terms on their subject matter, they take
@@ -114,7 +114,7 @@ export default function TermsPage() {
         <LegalNote>
           If you do not receive your access within an hour of paying, check your spam folder
           and then{" "}
-          <Link href="/contact" className="text-gold underline underline-offset-2">
+          <Link href="/contact" className="text-goldink underline underline-offset-2">
             contact us
           </Link>
           . We will resolve it or refund you in full.
@@ -130,7 +130,7 @@ export default function TermsPage() {
         <p>
           This does not affect your rights where a product is faulty, not as described, or
           where we cannot deliver it. Our{" "}
-          <Link href="/refund-policy" className="text-gold underline underline-offset-2">
+          <Link href="/refund-policy" className="text-goldink underline underline-offset-2">
             Refund Policy
           </Link>{" "}
           sets out in full when we do refund.
@@ -237,7 +237,7 @@ export default function TermsPage() {
       <Clause n="16." title="Contact">
         <p>
           Questions about these terms:{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>
           .

@@ -4,7 +4,7 @@ export default function NotFound() {
   return (
     <Section tone="ivory" size="tall">
       <div className="mx-auto max-w-xl text-center">
-        <p className="font-heading text-6xl text-gold/40">404</p>
+        <p className="font-heading text-6xl text-goldink/40">404</p>
         <h1 className="mt-5 font-heading text-3xl text-navy sm:text-4xl">
           That page is not here
         </h1>

@@ -20,8 +20,8 @@ export function FounderPortrait({ className = "" }: { className?: string }) {
       >
         <defs>
           <linearGradient id="founderBg" x1="0" y1="0" x2="0.6" y2="1">
-            <stop offset="0%" stopColor="#16294a" />
-            <stop offset="100%" stopColor="#0d1b33" />
+            <stop offset="0%" stopColor="#142438" />
+            <stop offset="100%" stopColor="#091320" />
           </linearGradient>
         </defs>
 
@@ -29,7 +29,7 @@ export function FounderPortrait({ className = "" }: { className?: string }) {
 
         {/* Oversized brand mark, echoing the hero treatment */}
         <g opacity="0.09" transform="translate(150 40) scale(0.95)">
-          <path d="M160 20 L300 268 H262 L160 90 L58 268 H20 L160 20 Z" fill="#c79a44" />
+          <path d="M160 20 L300 268 H262 L160 90 L58 268 H20 L160 20 Z" fill="#c1874c" />
         </g>
 
         <text
@@ -39,11 +39,11 @@ export function FounderPortrait({ className = "" }: { className?: string }) {
           fontFamily="Georgia, serif"
           fontSize="88"
           letterSpacing="6"
-          fill="#c79a44"
+          fill="#c1874c"
         >
           NA
         </text>
-        <rect x="170" y="240" width="60" height="1.5" fill="#c79a44" opacity="0.8" />
+        <rect x="170" y="240" width="60" height="1.5" fill="#c1874c" opacity="0.8" />
         <text
           x="200"
           y="272"

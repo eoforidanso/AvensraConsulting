@@ -104,7 +104,7 @@ export function AdminExports() {
         <button
           type="button"
           onClick={signOut}
-          className="text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-charcoal/60 underline underline-offset-4 hover:text-gold"
+          className="text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-charcoal/60 underline underline-offset-4 hover:text-goldink"
         >
           Sign out
         </button>

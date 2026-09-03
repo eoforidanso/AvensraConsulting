@@ -54,7 +54,7 @@ export default function ExecutiveCareerPositioningPage() {
         title={
           <>
             Executive Career
-            <span className="block text-gold">
+            <span className="block text-goldink">
               Positioning
               <TM />
             </span>
@@ -94,7 +94,7 @@ export default function ExecutiveCareerPositioningPage() {
                       <Icon className="h-7 w-7" />
                     </IconCircle>
                     <div>
-                      <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-gold">
+                      <span className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-goldink">
                         {pillar.n}
                       </span>
                       <h2 className="mt-1 font-heading text-xl text-navy sm:text-2xl">
@@ -117,7 +117,7 @@ export default function ExecutiveCareerPositioningPage() {
 
       <Section tone="navy">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
             Get started
           </p>
           <h2 className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl">

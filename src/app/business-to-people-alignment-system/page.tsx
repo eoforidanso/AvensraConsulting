@@ -105,13 +105,13 @@ export default function AlignmentSystemPage() {
           viewBox="0 0 320 288"
           aria-hidden="true"
         >
-          <path d="M160 20 L300 268 H262 L160 90 L58 268 H20 L160 20 Z" fill="#c79a44" />
+          <path d="M160 20 L300 268 H262 L160 90 L58 268 H20 L160 20 Z" fill="#c1874c" />
         </svg>
 
         <Container className="relative">
           <div className="grid items-center gap-12 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-40 lg:pb-24">
             <div>
-              <p className="hero-rise text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+              <p className="hero-rise text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
                 Digital Product &middot; Protected System
               </p>
               <h1
@@ -119,7 +119,7 @@ export default function AlignmentSystemPage() {
                 style={{ animationDelay: "70ms" }}
               >
                 Business-to-People
-                <span className="block text-gold">
+                <span className="block text-goldink">
                   Alignment System
                   <TM />
                 </span>
@@ -140,7 +140,7 @@ export default function AlignmentSystemPage() {
                 className="hero-rise mt-9 flex flex-wrap items-baseline gap-3"
                 style={{ animationDelay: "210ms" }}
               >
-                <span className="font-heading text-[2.75rem] leading-none text-gold">
+                <span className="font-heading text-[2.75rem] leading-none text-goldink">
                   {formatUsd(product.priceUsd)}
                 </span>
                 <span className="text-sm text-white/55">
@@ -270,7 +270,7 @@ export default function AlignmentSystemPage() {
                 <ul className="mt-4 space-y-3">
                   {product.assets.map((asset) => (
                     <li key={asset.file} className="flex items-center gap-3">
-                      <IconTools className="h-5 w-5 shrink-0 text-gold" />
+                      <IconTools className="h-5 w-5 shrink-0 text-goldink" />
                       <span className="text-[0.92rem] text-charcoal/85">{asset.label}</span>
                     </li>
                   ))}
@@ -310,7 +310,7 @@ export default function AlignmentSystemPage() {
                 </li>
                 <li>
                   &mdash; You need the work done for you. That is a{" "}
-                  <Link href="/consulting" className="text-gold underline underline-offset-2">
+                  <Link href="/consulting" className="text-goldink underline underline-offset-2">
                     consulting engagement
                   </Link>
                   .
@@ -342,11 +342,11 @@ export default function AlignmentSystemPage() {
         </div>
         <p className="mt-10 max-w-3xl text-sm leading-relaxed text-charcoal/60">
           Full detail of what your licence permits is set out in the{" "}
-          <Link href="/licence-terms" className="text-gold underline underline-offset-2">
+          <Link href="/licence-terms" className="text-goldink underline underline-offset-2">
             Digital Product Licence &amp; Usage Terms
           </Link>
           . Because access is issued immediately, please read the{" "}
-          <Link href="/refund-policy" className="text-gold underline underline-offset-2">
+          <Link href="/refund-policy" className="text-goldink underline underline-offset-2">
             Refund Policy
           </Link>{" "}
           before buying.
@@ -356,7 +356,7 @@ export default function AlignmentSystemPage() {
       {/* ------------------------------ Purchase -------------------------- */}
       <Section tone="navy">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
             Get the system
           </p>
           <h2 className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl">
@@ -368,7 +368,7 @@ export default function AlignmentSystemPage() {
           </p>
 
           <div className="mt-9 flex flex-wrap items-baseline justify-center gap-3">
-            <span className="font-heading text-5xl leading-none text-gold">
+            <span className="font-heading text-5xl leading-none text-goldink">
               {formatUsd(product.priceUsd)}
             </span>
             <span className="text-sm text-white/55">USD &middot; one-time</span>
@@ -386,7 +386,7 @@ export default function AlignmentSystemPage() {
           {!commerceEnabled ? (
             <p className="mt-5 text-sm text-white/60">
               Online purchasing goes live at launch.{" "}
-              <Link href="/contact" className="text-gold underline underline-offset-2">
+              <Link href="/contact" className="text-goldink underline underline-offset-2">
                 Contact us
               </Link>{" "}
               and we will arrange it directly.

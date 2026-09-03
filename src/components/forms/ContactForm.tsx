@@ -133,7 +133,7 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
         </Button>
         <p className="text-xs leading-relaxed text-charcoal/55">
           We use your details only to answer your enquiry. See our{" "}
-          <a href="/privacy-policy" className="text-gold underline underline-offset-2">
+          <a href="/privacy-policy" className="text-goldink underline underline-offset-2">
             Privacy Policy
           </a>
           .

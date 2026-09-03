@@ -62,7 +62,7 @@ export function Logo({
         </span>
         <span className="mt-1.5 flex items-center gap-1.5">
           <span className="h-px w-3 bg-gold" aria-hidden="true" />
-          <span className="text-[0.5rem] leading-none tracking-[0.3em] text-gold sm:text-[0.55rem]">
+          <span className="text-[0.5rem] leading-none tracking-[0.3em] text-goldink sm:text-[0.55rem]">
             CONSULTING
           </span>
           <span className="h-px w-3 bg-gold" aria-hidden="true" />

@@ -48,7 +48,7 @@ export default function LicenceTermsPage() {
           agreement.{" "}
           <Link
             href="/corporate-experiences#licensing"
-            className="text-gold underline underline-offset-2"
+            className="text-goldink underline underline-offset-2"
           >
             Enquire about corporate licensing
           </Link>
@@ -175,7 +175,7 @@ export default function LicenceTermsPage() {
         <p>
           <Link
             href="/corporate-experiences#licensing"
-            className="text-gold underline underline-offset-2"
+            className="text-goldink underline underline-offset-2"
           >
             Enquire about corporate licensing
           </Link>
@@ -195,7 +195,7 @@ export default function LicenceTermsPage() {
         <p>
           Questions about what your licence permits &mdash; ask before assuming, and we will
           give you a straight answer:{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>
           .

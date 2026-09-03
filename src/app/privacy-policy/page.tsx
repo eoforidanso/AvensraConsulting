@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
           {site.legalName} (&ldquo;Avensra&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is
           the controller of the personal information described in this policy. You can
           reach us at{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>
           .
@@ -172,7 +172,7 @@ export default function PrivacyPolicyPage() {
         />
         <p>
           To exercise any of these, email{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>
           . We respond within one month. If you are unhappy with our response, you may
@@ -226,11 +226,11 @@ export default function PrivacyPolicyPage() {
       <Clause n="13." title="Contact">
         <p>
           Questions about this policy or how we handle your information:{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>{" "}
           or via our{" "}
-          <Link href="/contact" className="text-gold underline underline-offset-2">
+          <Link href="/contact" className="text-goldink underline underline-offset-2">
             contact form
           </Link>
           .

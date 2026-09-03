@@ -20,7 +20,7 @@ export function Label({
       className="mb-2 block text-[0.7rem] font-semibold uppercase tracking-[0.13em] text-navy"
     >
       {children}
-      {required ? <span className="ml-1 text-gold">*</span> : null}
+      {required ? <span className="ml-1 text-goldink">*</span> : null}
     </label>
   );
 }

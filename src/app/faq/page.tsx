@@ -38,7 +38,7 @@ export default function FaqPage() {
         title={
           <>
             Answers, and
-            <span className="block text-gold">a real person if you need one</span>
+            <span className="block text-goldink">a real person if you need one</span>
           </>
         }
         lead="Search below, or jump to a section. If your question is not here, we would rather you asked us than guessed."
@@ -90,7 +90,7 @@ export default function FaqPage() {
                 Write to{" "}
                 <a
                   href={`mailto:${site.supportEmail}`}
-                  className="text-gold underline underline-offset-2"
+                  className="text-goldink underline underline-offset-2"
                 >
                   {site.supportEmail}
                 </a>{" "}
@@ -117,7 +117,7 @@ export default function FaqPage() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="inline-block py-2.5 text-sm text-charcoal/70 underline underline-offset-4 transition-colors hover:text-gold sm:py-0"
+                  className="inline-block py-2.5 text-sm text-charcoal/70 underline underline-offset-4 transition-colors hover:text-goldink sm:py-0"
                 >
                   {link.label}
                 </Link>

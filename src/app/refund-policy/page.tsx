@@ -25,7 +25,7 @@ export default function RefundPolicyPage() {
           <strong>always</strong> refund a duplicate charge, a payment where we could not
           deliver, and a product that is faulty or not as described. If something has gone
           wrong,{" "}
-          <Link href="/contact" className="text-gold underline underline-offset-2">
+          <Link href="/contact" className="text-goldink underline underline-offset-2">
             tell us
           </Link>{" "}
           &mdash; we would rather fix it than argue about it.
@@ -131,11 +131,11 @@ export default function RefundPolicyPage() {
       <Clause n="7." title="How to request a refund">
         <p>
           Email{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>{" "}
           from the address used at purchase, or use the{" "}
-          <Link href="/contact" className="text-gold underline underline-offset-2">
+          <Link href="/contact" className="text-goldink underline underline-offset-2">
             contact form
           </Link>
           , and include:
@@ -169,7 +169,7 @@ export default function RefundPolicyPage() {
           Where a refund is issued in full, the associated licence is revoked and access is
           withdrawn. Any copies in your possession must be deleted or destroyed. Continuing
           to use a refunded product is a breach of the{" "}
-          <Link href="/licence-terms" className="text-gold underline underline-offset-2">
+          <Link href="/licence-terms" className="text-goldink underline underline-offset-2">
             Licence Terms
           </Link>
           .
@@ -187,7 +187,7 @@ export default function RefundPolicyPage() {
       <Clause n="11." title="Contact">
         <p>
           Any question about this policy:{" "}
-          <a href={`mailto:${site.email}`} className="text-gold underline underline-offset-2">
+          <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
             {site.email}
           </a>
           .

@@ -40,7 +40,7 @@ export default async function ContactPage({
         title={
           <>
             Let&rsquo;s talk about
-            <span className="block text-gold">what you are trying to change</span>
+            <span className="block text-goldink">what you are trying to change</span>
           </>
         }
         lead="Whether it is a question about a product you have bought, an experience for your team, or a conversation about consulting — this reaches us directly."
@@ -72,7 +72,7 @@ export default async function ContactPage({
                 </h3>
                 <a
                   href={`mailto:${site.email}`}
-                  className="mt-1.5 block text-[0.95rem] text-charcoal/80 transition-colors hover:text-gold"
+                  className="mt-1.5 block text-[0.95rem] text-charcoal/80 transition-colors hover:text-goldink"
                 >
                   {site.email}
                 </a>
@@ -106,7 +106,7 @@ export default async function ContactPage({
                   href={site.linkedin}
                   target="_blank"
                   rel="noreferrer noopener"
-                  className="mt-1.5 block text-[0.95rem] text-charcoal/80 transition-colors hover:text-gold"
+                  className="mt-1.5 block text-[0.95rem] text-charcoal/80 transition-colors hover:text-goldink"
                 >
                   Follow Avensra Consulting
                 </a>
@@ -138,7 +138,7 @@ export default async function ContactPage({
                     The{" "}
                     <Link
                       href="/corporate-experiences#enquiry"
-                      className="text-gold underline underline-offset-2"
+                      className="text-goldink underline underline-offset-2"
                     >
                       corporate enquiry form
                     </Link>{" "}

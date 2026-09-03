@@ -20,7 +20,7 @@ export default function FeedbackPage() {
         title={
           <>
             Tell us what
-            <span className="block text-gold">actually happened</span>
+            <span className="block text-goldink">actually happened</span>
           </>
         }
         lead="Honest feedback is more useful to us than kind feedback. If something did not work, we would rather hear it from you than not hear it at all."
@@ -61,7 +61,7 @@ export default function FeedbackPage() {
               <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
                 This form is for feedback, so it is not monitored for urgent support. If
                 you have a problem accessing something you bought, use the{" "}
-                <a href="/contact" className="text-gold underline underline-offset-2">
+                <a href="/contact" className="text-goldink underline underline-offset-2">
                   contact form
                 </a>{" "}
                 and choose Product support.

@@ -38,7 +38,7 @@ export default function CorporateExperiencesPage() {
         title={
           <>
             Give your leaders room to
-            <span className="block text-gold">reset and realign</span>
+            <span className="block text-goldink">reset and realign</span>
           </>
         }
         lead="Facilitated experiences and licensing options that help leaders reset, realign and return with clarity."
@@ -84,7 +84,7 @@ export default function CorporateExperiencesPage() {
                 )}
               </IconCircle>
 
-              <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-gold">
+              <p className="mt-5 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-goldink">
                 {experience.duration}
               </p>
               <h3 className="mt-2 font-heading text-xl leading-snug text-navy">

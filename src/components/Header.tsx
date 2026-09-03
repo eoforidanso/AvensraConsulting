@@ -116,7 +116,7 @@ export function Header() {
                     aria-expanded={hasChildren ? openMenu === item.label : undefined}
                     onClick={() => setOpenMenu(null)}
                     className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 py-2 text-[0.68rem] font-medium uppercase tracking-[0.11em] transition-colors xl:px-3.5 xl:text-[0.7rem] xl:tracking-[0.13em] ${
-                      active ? "text-gold" : "text-white/85 hover:text-gold"
+                      active ? "text-goldink" : "text-white/85 hover:text-goldink"
                     }`}
                   >
                     {item.label}
@@ -151,7 +151,7 @@ export function Header() {
                             href={child.href}
                             className="group block px-4 py-3 transition-colors hover:bg-ivory"
                           >
-                            <span className="block text-sm font-semibold text-navy group-hover:text-gold">
+                            <span className="block text-sm font-semibold text-navy group-hover:text-goldink">
                               {child.label}
                             </span>
                             {child.description ? (
@@ -223,7 +223,7 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={`block py-4 text-sm font-medium uppercase tracking-[0.13em] ${
-                      isActive(item) ? "text-gold" : "text-white"
+                      isActive(item) ? "text-goldink" : "text-white"
                     }`}
                   >
                     {item.label}
@@ -234,7 +234,7 @@ export function Header() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="text-sm leading-snug text-white/70 hover:text-gold"
+                          className="text-sm leading-snug text-white/70 hover:text-goldink"
                         >
                           {child.label}
                         </Link>

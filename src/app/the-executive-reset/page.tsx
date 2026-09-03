@@ -89,15 +89,15 @@ export default function ExecutiveResetPage() {
           viewBox="0 0 320 288"
           aria-hidden="true"
         >
-          <circle cx="160" cy="144" r="120" fill="none" stroke="#c79a44" strokeWidth="6" />
-          <circle cx="160" cy="144" r="80" fill="none" stroke="#c79a44" strokeWidth="6" />
-          <circle cx="160" cy="144" r="40" fill="none" stroke="#c79a44" strokeWidth="6" />
+          <circle cx="160" cy="144" r="120" fill="none" stroke="#c1874c" strokeWidth="6" />
+          <circle cx="160" cy="144" r="80" fill="none" stroke="#c1874c" strokeWidth="6" />
+          <circle cx="160" cy="144" r="40" fill="none" stroke="#c1874c" strokeWidth="6" />
         </svg>
 
         <Container className="relative">
           <div className="grid items-center gap-12 pt-28 pb-16 sm:pt-32 sm:pb-20 lg:grid-cols-[1.15fr_1fr] lg:gap-16 lg:pt-40 lg:pb-24">
             <div>
-              <p className="hero-rise text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+              <p className="hero-rise text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
                 Digital Product &middot; Guided Experience
               </p>
               <h1
@@ -105,7 +105,7 @@ export default function ExecutiveResetPage() {
                 style={{ animationDelay: "70ms" }}
               >
                 The Executive
-                <span className="block text-gold">
+                <span className="block text-goldink">
                   Reset
                   <TM />
                 </span>
@@ -120,12 +120,12 @@ export default function ExecutiveResetPage() {
                 <Rule />
               </div>
               <p
-                className="hero-rise font-heading text-lg text-gold"
+                className="hero-rise font-heading text-lg text-goldink"
                 style={{ animationDelay: "140ms" }}
               >
-                Release <span className="text-gold/55">&rarr;</span> Reset{" "}
-                <span className="text-gold/55">&rarr;</span> Reflect{" "}
-                <span className="text-gold/55">&rarr;</span> Return
+                Release <span className="text-goldink/55">&rarr;</span> Reset{" "}
+                <span className="text-goldink/55">&rarr;</span> Reflect{" "}
+                <span className="text-goldink/55">&rarr;</span> Return
               </p>
               <p
                 className="hero-rise mt-6 max-w-xl text-base leading-relaxed text-white/80"
@@ -139,7 +139,7 @@ export default function ExecutiveResetPage() {
                 className="hero-rise mt-9 flex flex-wrap items-baseline gap-3"
                 style={{ animationDelay: "210ms" }}
               >
-                <span className="font-heading text-[2.75rem] leading-none text-gold">
+                <span className="font-heading text-[2.75rem] leading-none text-goldink">
                   {formatUsd(product.priceUsd)}
                 </span>
                 <span className="text-sm text-white/55">USD &middot; yours to keep</span>
@@ -189,7 +189,7 @@ export default function ExecutiveResetPage() {
         <ol className="grid gap-px border border-ivory-200 bg-ivory-200 sm:grid-cols-2 lg:grid-cols-4">
           {journey.map(({ step, body }, index) => (
             <Reveal key={step} as="li" delay={index * 90} className="bg-white px-7 py-9">
-              <span className="font-heading text-4xl text-gold/40">
+              <span className="font-heading text-4xl text-goldink/40">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-4 font-heading text-xl text-navy">{step}</h3>
@@ -269,14 +269,14 @@ export default function ExecutiveResetPage() {
       {/* ------------------------------ Purchase -------------------------- */}
       <Section tone="navy">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-gold">
+          <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
             Get your copy
           </p>
           <h2 className="mt-5 font-heading text-3xl leading-tight text-white sm:text-4xl">
             The Executive Reset&trade;
           </h2>
           <div className="mt-8 flex flex-wrap items-baseline justify-center gap-3">
-            <span className="font-heading text-5xl leading-none text-gold">
+            <span className="font-heading text-5xl leading-none text-goldink">
               {formatUsd(product.priceUsd)}
             </span>
             <span className="text-sm text-white/55">USD &middot; one-time</span>
@@ -294,7 +294,7 @@ export default function ExecutiveResetPage() {
           {!commerceEnabled ? (
             <p className="mt-5 text-sm text-white/60">
               Online purchasing goes live at launch.{" "}
-              <Link href="/contact" className="text-gold underline underline-offset-2">
+              <Link href="/contact" className="text-goldink underline underline-offset-2">
                 Contact us
               </Link>{" "}
               and we will arrange it directly.
@@ -303,11 +303,11 @@ export default function ExecutiveResetPage() {
 
           <p className="mt-6 text-xs leading-relaxed text-white/45">
             Access is issued immediately, so please read the{" "}
-            <Link href="/refund-policy" className="text-gold underline underline-offset-2">
+            <Link href="/refund-policy" className="text-goldink underline underline-offset-2">
               Refund Policy
             </Link>{" "}
             and{" "}
-            <Link href="/licence-terms" className="text-gold underline underline-offset-2">
+            <Link href="/licence-terms" className="text-goldink underline underline-offset-2">
               Licence Terms
             </Link>{" "}
             before buying.

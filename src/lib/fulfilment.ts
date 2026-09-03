@@ -96,7 +96,7 @@ function customerEmail(
     ? p(
         `This product opens in a secure viewer. If you do not already have it installed, <a href="${esc(
           licence.viewerUrl,
-        )}" style="color:#c79a44;">download the viewer here</a> first.`,
+        )}" style="color:#c1874c;">download the viewer here</a> first.`,
       )
     : "";
 
