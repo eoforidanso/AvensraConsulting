@@ -12,6 +12,17 @@ import Image from "next/image";
  * palette. If it is ever replaced with a photograph, keep the 4:5
  * portrait ratio and this component needs no other change.
  */
+/*
+ * next/image does NOT prefix basePath onto src when images.unoptimized is
+ * set, which is required for a static export. On the GitHub Pages preview
+ * that made this request eoforidanso.github.io/founder.png (404) instead of
+ * /AvensraConsulting/founder.png (200) — a visibly broken portrait.
+ *
+ * Prefixing explicitly fixes both targets: the export build sets this var,
+ * and the real deployment leaves it empty so the path stays "/founder.png".
+ */
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export function FounderPortrait({
   className = "",
   alt,
@@ -22,7 +33,7 @@ export function FounderPortrait({
   return (
     <div className={`relative ${className}`}>
       <Image
-        src="/founder.png"
+        src={`${basePath}/founder.png`}
         alt={alt}
         width={900}
         height={1150}
