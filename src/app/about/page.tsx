@@ -23,8 +23,9 @@ export const metadata: Metadata = {
 };
 
 const founder = {
-  name: "Nana Ama Setorwofia",
-  role: "Founder & Principal Consultant",
+  name: "Emmanuel Ofori-Danso",
+  role: "Founder and Architect",
+  yearsInBusiness: 3,
 };
 
 /** The three solution areas, each linked to where the detail lives. */
@@ -231,7 +232,9 @@ export default function AboutPage() {
 
         <div className="grid gap-12 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16">
           <Reveal>
-            <FounderPortrait />
+            <FounderPortrait
+              alt={`${founder.name}, ${founder.role} of Avensra Consulting — an illustrated linocut-style portrait`}
+            />
             <div className="mt-8">
               <p className="font-heading text-2xl text-navy">{founder.name}</p>
               <p className="mt-2 text-[0.7rem] font-semibold uppercase tracking-[0.16em] text-goldink">
@@ -240,39 +243,43 @@ export default function AboutPage() {
             </div>
           </Reveal>
 
+          {/*
+            BIOGRAPHY — SHORTENED DELIBERATELY. See LAUNCH-CHECKLIST.md 2.7.
+
+            The previous version carried a detailed career history (15+
+            years, senior HR leadership, workforce transformation, speaking
+            and media work) that was written for a different named person.
+            Those are material claims on a consultancy site — prospective
+            clients weigh them — so they have not been re-attributed here.
+            What remains is what Avensra has actually confirmed, plus the
+            thinking behind the firm, which is about the business rather
+            than any individual's CV.
+
+            Pronouns are avoided rather than assumed; they have not been
+            stated. If a pronoun is preferred, it belongs in this block.
+          */}
           <Reveal delay={100} className="space-y-5 text-[1.02rem] leading-relaxed text-charcoal/80">
             <p>
-              Avensra Consulting was founded by {founder.name}, a business and people leader
-              with more than 15 years of professional experience across multiple industries
-              and organisational environments.
+              Avensra Consulting was founded by {founder.name}, and has been working with
+              organisations for {founder.yearsInBusiness} years.
             </p>
             <p>
-              Her career has included senior HR leadership, organisational strategy,
-              workforce transformation, capability development, employee relations,
-              operations and business-facing leadership responsibilities.
-            </p>
-            <p>
-              Throughout her career, one challenge appeared repeatedly: organisations often
-              invest significantly in people initiatives without creating a strong enough
-              connection between those investments and the business outcomes they need to
-              achieve.
+              The firm exists because of a pattern that shows up again and again:
+              organisations invest significantly in people initiatives without building a
+              strong enough connection between those investments and the business outcomes
+              they need to achieve.
             </p>
             <p className="border-l-2 border-gold bg-ivory px-6 py-4 font-heading text-xl text-navy">
-              That experience shaped the thinking behind Avensra.
+              That gap is what Avensra was built to close.
             </p>
             <p>
-              Nana Ama&rsquo;s work focuses on making that connection clearer. She brings
-              together business context, people strategy, structured problem-solving and
-              practical execution to help leaders move from broad organisational ambitions
-              to decisions they can implement and measure.
+              The work focuses on making that connection clearer — bringing together
+              business context, people strategy, structured problem-solving and practical
+              execution to help leaders move from broad organisational ambitions to
+              decisions they can implement and measure.
             </p>
             <p>
-              She has also contributed to professional and business conversations through
-              speaking engagements, facilitation, career development initiatives and media
-              discussions.
-            </p>
-            <p>
-              Avensra brings that experience into a consulting model designed to serve
+              Avensra brings that thinking into a consulting model designed to serve
               organisations and professionals across markets.
             </p>
           </Reveal>

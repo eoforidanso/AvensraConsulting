@@ -1,64 +1,39 @@
+import Image from "next/image";
+
 /**
- * Founder portrait placeholder.
+ * Founder portrait.
  *
- * NOTE FOR HANDOVER: no photograph of Nana Ama Setorwofia was supplied.
- * This is a brand-consistent monogram standing in for one, so the About
- * page is complete and reviewable.
+ * A linocut-style illustrated portrait rather than a photograph, which
+ * suits the editorial feel of the rest of the site — the print texture
+ * sits naturally against the paper ground and the bronze rule.
  *
- * To use the real photograph: drop it in /public/founder.jpg and replace
- * this component's <svg> with next/image, keeping the same square aspect
- * ratio and the gold corner rule. Nothing else on the page changes.
+ * The source image is monochrome on a warm cream almost identical to
+ * --color-ivory, so it needs no cropping or treatment to sit in the
+ * palette. If it is ever replaced with a photograph, keep the 4:5
+ * portrait ratio and this component needs no other change.
  */
-export function FounderPortrait({ className = "" }: { className?: string }) {
+export function FounderPortrait({
+  className = "",
+  alt,
+}: {
+  className?: string;
+  alt: string;
+}) {
   return (
     <div className={`relative ${className}`}>
-      <svg
-        viewBox="0 0 400 400"
+      <Image
+        src="/founder.png"
+        alt={alt}
+        width={900}
+        height={1150}
+        // Above the fold on /about at desktop widths, so it should not
+        // wait for lazy-loading to start fetching.
+        priority
+        sizes="(min-width: 1024px) 22rem, 100vw"
         className="h-auto w-full"
-        role="img"
-        aria-label="Nana Ama Setorwofia, Founder and Principal Consultant of Avensra Consulting"
-      >
-        <defs>
-          <linearGradient id="founderBg" x1="0" y1="0" x2="0.6" y2="1">
-            <stop offset="0%" stopColor="#142438" />
-            <stop offset="100%" stopColor="#091320" />
-          </linearGradient>
-        </defs>
+      />
 
-        <rect width="400" height="400" fill="url(#founderBg)" />
-
-        {/* Oversized brand mark, echoing the hero treatment */}
-        <g opacity="0.09" transform="translate(150 40) scale(0.95)">
-          <path d="M160 20 L300 268 H262 L160 90 L58 268 H20 L160 20 Z" fill="#c1874c" />
-        </g>
-
-        <text
-          x="200"
-          y="212"
-          textAnchor="middle"
-          fontFamily="Georgia, serif"
-          fontSize="88"
-          letterSpacing="6"
-          fill="#c1874c"
-        >
-          NA
-        </text>
-        <rect x="170" y="240" width="60" height="1.5" fill="#c1874c" opacity="0.8" />
-        <text
-          x="200"
-          y="272"
-          textAnchor="middle"
-          fontFamily="Helvetica, Arial, sans-serif"
-          fontSize="11"
-          letterSpacing="4"
-          fill="#ffffff"
-          opacity="0.6"
-        >
-          FOUNDER
-        </text>
-      </svg>
-
-      {/* Gold corner rule, matching the card treatment used site-wide */}
+      {/* Bronze corner rule, matching the card treatment used site-wide */}
       <span
         aria-hidden="true"
         className="absolute -bottom-3 -right-3 h-16 w-16 border-b-2 border-r-2 border-gold"
