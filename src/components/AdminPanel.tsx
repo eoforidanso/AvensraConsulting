@@ -54,7 +54,7 @@ export function AdminLogin() {
 
   return (
     <Card tone="white" className="mx-auto max-w-md p-8 sm:p-10">
-      <h1 className="font-heading text-2xl text-navy">Avensra admin</h1>
+      <h1 className="font-heading text-2xl text-navy">Emmanus Plus admin</h1>
       <Rule className="my-5" />
       <p className="mb-6 text-[0.92rem] leading-relaxed text-charcoal/70">
         Enter the admin password to download form submissions and order records.

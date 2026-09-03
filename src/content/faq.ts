@@ -19,7 +19,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "Which payment methods do you accept?",
-        a: "We accept major international credit and debit cards through our payment provider. Card details are entered on the provider's secure hosted checkout — Avensra never sees or stores your full card number.",
+        a: "We accept major international credit and debit cards through our payment provider. Card details are entered on the provider's secure hosted checkout — Emmanus Plus never sees or stores your full card number.",
       },
       {
         q: "Can I buy from outside the United States?",
@@ -35,7 +35,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "Do you offer corporate invoicing?",
-        a: "Yes, for corporate experiences and corporate licences. These are arranged directly with Avensra rather than through the website checkout — send us an enquiry and we will issue a quotation and invoice.",
+        a: "Yes, for corporate experiences and corporate licences. These are arranged directly with Emmanus Plus rather than through the website checkout — send us an enquiry and we will issue a quotation and invoice.",
       },
     ],
   },
@@ -85,7 +85,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: "Can I use these materials with my own clients?",
-        a: "Not under a standard single-user licence. Facilitation and client-facing use require a corporate or facilitator licence agreed with Avensra.",
+        a: "Not under a standard single-user licence. Facilitation and client-facing use require a corporate or facilitator licence agreed with Emmanus Plus.",
       },
       {
         q: "Are my copies identifiable?",

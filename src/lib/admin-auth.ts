@@ -1,5 +1,5 @@
 /**
- * Minimal shared-password gate for the Avensra export screens.
+ * Minimal shared-password gate for the Emmanus Plus export screens.
  *
  * Deliberately not a user system: the brief rules out custom account
  * functionality and complex role-based administration. Stripe's own dashboard
@@ -10,7 +10,7 @@ import crypto from "node:crypto";
 import { cookies } from "next/headers";
 import { env } from "./env";
 
-const COOKIE = "avensra_admin";
+const COOKIE = "emmanusplus_admin";
 const MAX_AGE = 60 * 60 * 8; // 8 hours
 
 function secret(): string {

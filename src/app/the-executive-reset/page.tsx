@@ -331,7 +331,7 @@ export default function ExecutiveResetPage() {
                 <IconPeople className="h-7 w-7" />
               </IconCircle>
               <h3 className="mt-6 font-heading text-2xl text-navy">
-                Avensra-facilitated experiences
+                Facilitated by Emmanus Plus
               </h3>
               <Rule className="my-4" />
               <p className="text-[0.95rem] leading-relaxed text-charcoal/75">
@@ -364,7 +364,7 @@ export default function ExecutiveResetPage() {
                 sessions internally, within agreed participant volumes.
               </p>
               <p className="mt-5 text-[0.9rem] text-charcoal/60">
-                Quoted per organisation. Enquiries handled directly by Avensra.
+                Quoted per organisation. Enquiries handled directly by Emmanus Plus.
               </p>
               <div className="mt-auto pt-7">
                 <ButtonLink href="/corporate-experiences#licensing" variant="outline">

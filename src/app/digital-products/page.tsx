@@ -145,7 +145,7 @@ export default function DigitalProductsPage() {
 
       <Section tone="ivory">
         <SectionHeading
-          eyebrow="Buying from Avensra"
+          eyebrow="Buying from Emmanus Plus"
           title="How it works"
           className="mb-14"
         />
@@ -168,7 +168,7 @@ export default function DigitalProductsPage() {
             </h3>
             <p className="mt-3 max-w-2xl text-[0.95rem] leading-relaxed text-charcoal/75">
               A standard purchase is a single-user licence. If you need access for a team, or
-              want to facilitate sessions using Avensra material, a corporate licence is the
+              want to facilitate sessions using Emmanus Plus material, a corporate licence is the
               right route &mdash; and usually better value.
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">

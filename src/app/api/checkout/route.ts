@@ -45,7 +45,7 @@ export async function POST(request: Request) {
   }
 
   // A configured Stripe Price is preferred: it keeps Stripe as the source of
-  // commercial truth and lets Avensra change prices from the dashboard.
+  // commercial truth and lets Emmanus Plus change prices from the dashboard.
   const lineItem: Stripe.Checkout.SessionCreateParams.LineItem[] = product.stripePriceId
     ? [{ price: product.stripePriceId, quantity: 1 }]
     : [
@@ -79,7 +79,7 @@ export async function POST(request: Request) {
       consent_collection: { terms_of_service: "required" },
       custom_text: {
         terms_of_service_acceptance: {
-          message: `I agree to the Avensra [Terms & Conditions](${env.siteUrl}/terms-and-conditions), [Refund Policy](${env.siteUrl}/refund-policy) and [Digital Product Licence](${env.siteUrl}/licence-terms).`,
+          message: `I agree to the Emmanus Plus [Terms & Conditions](${env.siteUrl}/terms-and-conditions), [Refund Policy](${env.siteUrl}/refund-policy) and [Digital Product Licence](${env.siteUrl}/licence-terms).`,
         },
       },
       success_url: `${env.siteUrl}/order/confirmed?session_id={CHECKOUT_SESSION_ID}`,

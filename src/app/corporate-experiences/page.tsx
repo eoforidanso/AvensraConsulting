@@ -51,7 +51,7 @@ export default function CorporateExperiencesPage() {
       {/* --------------------------- Experiences -------------------------- */}
       <Section tone="white" id="experiences">
         <SectionHeading
-          eyebrow="Avensra-facilitated"
+          eyebrow="Facilitated by Emmanus Plus"
           title="The Executive Reset™, run for your team"
           lead="Release → Reset → Reflect → Return. Choose the length that fits the moment you are designing around."
           className="mb-14"
@@ -188,7 +188,7 @@ export default function CorporateExperiencesPage() {
               eyebrow="Corporate licensing"
               title="Run it yourself, under licence"
               align="left"
-              lead="Empower your own teams to facilitate Executive Reset™ sessions internally, using licensed Avensra material."
+              lead="Empower your own teams to facilitate Executive Reset™ sessions internally, using licensed Emmanus Plus material."
             />
             <IconCircle className="mt-2">
               <IconLicence className="h-7 w-7" />
@@ -207,7 +207,7 @@ export default function CorporateExperiencesPage() {
               <p className="mt-7 border-t border-ivory-200 pt-6 text-[0.9rem] leading-relaxed text-charcoal/70">
                 Licences are quoted per organisation based on participant volumes, duration
                 and territory. Enquiries, quotations, participant lists, invoicing and
-                licence administration are handled directly by Avensra.
+                licence administration are handled directly by Emmanus Plus.
               </p>
               <ButtonLink href="#enquiry" variant="navy" className="mt-7">
                 Request licensing details <Arrow />

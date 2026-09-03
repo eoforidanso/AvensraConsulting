@@ -2,7 +2,7 @@
  * Consulting & Advisory.
  *
  * Executive Career Positioning™ was gated by the Phase 1 brief — "still
- * under development... should only be published after Avensra approves the
+ * under development... should only be published after Emmanus Plus approves the
  * final offer" — and is published here from that approved offer.
  *
  * This replaces the earlier four-pillar "Strategy & Business Alignment /
@@ -109,7 +109,7 @@ export const businessToPeopleAdvisorySupport = {
   name: "Business-to-People Advisory Support",
   tagline:
     "Optional expert guidance for purchasers of the Business-to-People Alignment System™ as they develop and refine their people strategy.",
-  body: "The Alignment System is built to be used on your own. This advisory support is for teams who would rather have an Avensra consultant alongside them for part of that journey — reviewing your diagnostic results, sense-checking your alignment plan, or working through a specific sticking point with your leadership team.",
+  body: "The Alignment System is built to be used on your own. This advisory support is for teams who would rather have an Emmanus Plus consultant alongside them for part of that journey — reviewing your diagnostic results, sense-checking your alignment plan, or working through a specific sticking point with your leadership team.",
   eligibility:
     "Available to purchasers of the Business-to-People Alignment System™. Mention your order reference when you enquire, so we can confirm your purchase and get started.",
 };

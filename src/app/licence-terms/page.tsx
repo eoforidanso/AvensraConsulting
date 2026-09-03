@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Digital Product Licence & Usage Terms",
   description:
-    "What your Avensra digital product licence permits, what it does not, how licences are protected and identified, and when a licence can be revoked.",
+    "What your Emmanus Plus digital product licence permits, what it does not, how licences are protected and identified, and when a licence can be revoked.",
   alternates: { canonical: "/licence-terms" },
 };
 
@@ -17,11 +17,11 @@ export default function LicenceTermsPage() {
     <LegalPage
       title="Digital Product Licence & Usage Terms"
       updated={UPDATED}
-      summary="Buying an Avensra digital product gives you a licence to use it. It does not transfer ownership. This document sets out exactly what that licence permits."
+      summary="Buying an Emmanus Plus digital product gives you a licence to use it. It does not transfer ownership. This document sets out exactly what that licence permits."
     >
       <Clause n="1." title="What you are buying">
         <p>
-          When you purchase an Avensra digital product you receive a{" "}
+          When you purchase an Emmanus Plus digital product you receive a{" "}
           <strong>limited, personal, non-exclusive, non-transferable licence</strong> to use
           it under these terms. All intellectual property in the product &mdash; the
           methodology, frameworks, templates, tools, text, design and marks &mdash; remains
@@ -43,8 +43,8 @@ export default function LicenceTermsPage() {
         <p className="font-semibold text-navy">Corporate licence</p>
         <p>
           Where an organisation needs access for multiple people, or wants its own
-          facilitators to run sessions using Avensra material, a corporate licence is
-          required. These are agreed directly with Avensra under a separate written
+          facilitators to run sessions using Emmanus Plus material, a corporate licence is
+          required. These are agreed directly with Emmanus Plus under a separate written
           agreement.{" "}
           <Link
             href="/corporate-experiences#licensing"
@@ -81,7 +81,7 @@ export default function LicenceTermsPage() {
             "Removing, altering or obscuring any watermark, identifier, copyright notice or trademark",
             "Circumventing, disabling or attempting to defeat any licensing, access control or protection measure",
             "Publishing the product or extracts from it, including on internal wikis, shared drives or social media",
-            "Using Avensra marks or branding in a way that suggests endorsement or partnership",
+            "Using Emmanus Plus marks or branding in a way that suggests endorsement or partnership",
           ]}
         />
       </Clause>
@@ -167,7 +167,7 @@ export default function LicenceTermsPage() {
 
       <Clause n="10." title="Corporate and facilitator use">
         <p>
-          If you want to use Avensra material with a team, with participants, or with
+          If you want to use Emmanus Plus material with a team, with participants, or with
           clients, that is a conversation we welcome &mdash; it simply needs the right
           licence. A corporate licence covers licensed materials for your facilitators,
           facilitator guidance, agreed participant volumes and defined usage terms.

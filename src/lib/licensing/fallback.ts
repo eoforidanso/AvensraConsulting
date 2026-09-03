@@ -13,7 +13,7 @@ import { signAccessToken } from "@/lib/access-token";
 import { policies, type IssueLicenceInput, type IssuedLicence, type LicensingProvider } from "./types";
 
 export const fallbackProvider: LicensingProvider = {
-  name: "avensra-signed-link",
+  name: "emmanusplus-signed-link",
 
   isConfigured() {
     return Boolean(env.deliverySecret);

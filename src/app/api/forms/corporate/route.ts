@@ -48,19 +48,19 @@ export async function POST(request: Request) {
     ],
     autoReply: (d) => ({
       to: d.email,
-      subject: "Your corporate enquiry — Avensra Consulting",
+      subject: "Your corporate enquiry — Emmanus Plus Consulting",
       html: emailShell(
         "Thank you for your enquiry",
         [
           p(`Hello ${esc(d.name.split(" ")[0])},`),
           p(
-            `Thank you for your interest in Avensra for ${esc(d.organisation)}. We have received your enquiry and will come back to you with a quotation and available dates.`,
+            `Thank you for your interest in Emmanus Plus for ${esc(d.organisation)}. We have received your enquiry and will come back to you with a quotation and available dates.`,
           ),
           p(
             "If it would help to talk it through first, reply to this email and we will arrange a short call.",
           ),
           small(
-            "Corporate experiences, quotations and licence administration are arranged directly with Avensra.",
+            "Corporate experiences, quotations and licence administration are arranged directly with Emmanus Plus.",
           ),
         ].join(""),
       ),

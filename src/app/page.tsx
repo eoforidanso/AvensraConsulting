@@ -89,7 +89,7 @@ export default function HomePage() {
               className="hero-rise max-w-lg text-base leading-relaxed text-white/80 sm:text-lg"
               style={{ animationDelay: "180ms" }}
             >
-              Avensra helps organisations align their strategy with their people so
+              Emmanus Plus helps organisations align their strategy with their people so
               performance is not just planned, it is lived.
             </p>
 
@@ -240,7 +240,7 @@ export default function HomePage() {
                 </IconCircle>
                 <div>
                   <h3 className="font-body text-[0.78rem] font-bold uppercase tracking-[0.08em] text-navy">
-                    Avensra-facilitated experiences
+                    Facilitated by Emmanus Plus
                   </h3>
                   <p className="mt-2 font-heading text-[0.95rem] text-goldink">
                     Release <span className="text-goldink/60">&rarr;</span> Reset{" "}
@@ -256,7 +256,7 @@ export default function HomePage() {
                       60-minute experiences
                     </li>
                     <li className="flex gap-2">
-                      <span className="text-goldink">&bull;</span> Led by Avensra for maximum
+                      <span className="text-goldink">&bull;</span> Led by Emmanus Plus for maximum
                       impact
                     </li>
                   </ul>

@@ -58,7 +58,7 @@ export function emailShell(headline: string, bodyHtml: string): string {
     <tr><td align="center">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;background:#ffffff;border:1px solid #ece5d9;">
         <tr><td style="background:${NAVY};padding:28px 32px;">
-          <div style="font-size:22px;letter-spacing:0.22em;color:#ffffff;font-weight:600;">AVENSRA</div>
+          <div style="font-size:22px;letter-spacing:0.22em;color:#ffffff;font-weight:600;">EMMANUS PLUS</div>
           <div style="font-size:10px;letter-spacing:0.28em;color:${GOLD};margin-top:6px;">STRATEGY. PEOPLE. PERFORMANCE.</div>
         </td></tr>
         <tr><td style="padding:36px 32px 8px;">

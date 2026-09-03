@@ -6,7 +6,7 @@ import { footerNav } from "@/lib/site";
 /**
  * Shared shell for the four policy pages.
  *
- * IMPORTANT — FOR AVENSRA:
+ * IMPORTANT — FOR EMMANUS PLUS:
  * The policy copy in these pages is a comprehensive, launch-ready draft
  * written against the Phase 1 brief and normal practice for digital-product
  * sales. It has NOT been reviewed by a lawyer. Have a qualified adviser

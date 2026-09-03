@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "FAQ & Support",
   description:
-    "Answers on orders, payment, product access, licences, technical support, corporate experiences and refunds — plus how to reach Avensra support directly.",
+    "Answers on orders, payment, product access, licences, technical support, corporate experiences and refunds — plus how to reach Emmanus Plus support directly.",
   alternates: { canonical: "/faq" },
 };
 

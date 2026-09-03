@@ -11,7 +11,7 @@ export const env = {
   stripeWebhookSecret: process.env.STRIPE_WEBHOOK_SECRET,
 
   resendApiKey: process.env.RESEND_API_KEY,
-  mailFrom: process.env.MAIL_FROM ?? "Avensra Consulting <info@avensraconsulting.com>",
+  mailFrom: process.env.MAIL_FROM ?? "Emmanus Plus Consulting <info@avensraconsulting.com>",
   mailTo: process.env.MAIL_TO ?? "info@avensraconsulting.com",
 
   /** Secret used to sign delivery/access tokens. Required in production. */

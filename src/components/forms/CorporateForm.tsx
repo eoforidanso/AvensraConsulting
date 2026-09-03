@@ -177,7 +177,7 @@ export function CorporateForm({ defaultFormat }: { defaultFormat?: string }) {
           {state === "submitting" ? null : <Arrow />}
         </Button>
         <p className="text-xs leading-relaxed text-charcoal/55">
-          Quotations, invoicing and licence administration are handled directly by Avensra.
+          Quotations, invoicing and licence administration are handled directly by Emmanus Plus.
         </p>
       </div>
     </form>

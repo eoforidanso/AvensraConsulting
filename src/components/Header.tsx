@@ -97,7 +97,7 @@ export function Header() {
           {/* Desktop navigation */}
           <nav
             aria-label="Primary"
-            className="hidden items-center gap-1 lg:flex xl:gap-2"
+            className="hidden items-center gap-0.5 xl:flex 2xl:gap-1.5"
           >
             {primaryNav.map((item) => {
               const active = isActive(item);
@@ -115,7 +115,7 @@ export function Header() {
                     aria-current={active ? "page" : undefined}
                     aria-expanded={hasChildren ? openMenu === item.label : undefined}
                     onClick={() => setOpenMenu(null)}
-                    className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 py-2 text-[0.68rem] font-medium uppercase tracking-[0.11em] transition-colors xl:px-3.5 xl:text-[0.7rem] xl:tracking-[0.13em] ${
+                    className={`flex items-center gap-1.5 whitespace-nowrap px-2.5 py-2 text-[0.66rem] font-medium uppercase tracking-[0.09em] transition-colors 2xl:px-3.5 2xl:text-[0.7rem] 2xl:tracking-[0.13em] ${
                       active ? "text-goldink" : "text-white/85 hover:text-goldink"
                     }`}
                   >
@@ -170,7 +170,7 @@ export function Header() {
 
             <Link
               href="/contact"
-              className="ml-3 inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-gold px-5 py-3 text-[0.66rem] font-semibold uppercase tracking-[0.12em] text-navy transition-colors hover:bg-gold-400 xl:px-6 xl:text-[0.68rem] xl:tracking-[0.14em]"
+              className="ml-2 inline-flex shrink-0 items-center gap-2 whitespace-nowrap bg-gold px-4 py-3 text-[0.64rem] font-semibold uppercase tracking-[0.1em] text-navy transition-colors hover:bg-gold-400 2xl:ml-3 2xl:px-6 2xl:text-[0.68rem] 2xl:tracking-[0.14em]"
             >
               Contact Us
             </Link>
@@ -182,7 +182,7 @@ export function Header() {
             onClick={() => setMobileOpen((v) => !v)}
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
-            className="-mr-2 flex h-11 w-11 items-center justify-center text-white lg:hidden"
+            className="-mr-2 flex h-11 w-11 items-center justify-center text-white xl:hidden"
           >
             <span className="sr-only">{mobileOpen ? "Close menu" : "Open menu"}</span>
             <svg viewBox="0 0 24 24" className="h-6 w-6" aria-hidden="true">
@@ -211,7 +211,7 @@ export function Header() {
       <div
         id="mobile-nav"
         aria-hidden={!mobileOpen}
-        className={`grid overflow-hidden border-t border-white/10 bg-navy transition-[grid-template-rows] duration-[400ms] ease-[var(--ease-glide)] lg:hidden ${
+        className={`grid overflow-hidden border-t border-white/10 bg-navy transition-[grid-template-rows] duration-[400ms] ease-[var(--ease-glide)] xl:hidden ${
           mobileOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
         }`}
       >

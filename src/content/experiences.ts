@@ -1,7 +1,7 @@
 /**
  * Corporate Experiences — enquiry-led, not sold through checkout.
  * Prices are "from" guide prices shown on the artwork; quotations,
- * participant lists and invoicing are handled manually by Avensra in Phase 1.
+ * participant lists and invoicing are handled manually by Emmanus Plus in Phase 1.
  */
 
 export type Experience = {
@@ -59,5 +59,5 @@ export const licensingBenefits = [
   "Licensed materials for your own facilitators",
   "Facilitator guidance for running Executive Reset™ sessions in-house",
   "Agreed participant volumes and usage terms",
-  "Renewal and expansion handled directly with Avensra",
+  "Renewal and expansion handled directly with Emmanus Plus",
 ];

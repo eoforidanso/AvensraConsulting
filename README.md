@@ -1,6 +1,6 @@
-# Avensra Consulting — Phase 1 Website
+# Emmanus Plus Consulting — Phase 1 Website
 
-Production website for Avensra Consulting: marketing, digital-product ecommerce,
+Production website for Emmanus Plus Consulting: marketing, digital-product ecommerce,
 secure post-payment delivery, DRM/licensing integration points, enquiry and
 feedback capture, and analytics.
 
@@ -18,7 +18,7 @@ Built to the approved artwork in [`brand/avensra-design-direction.jpeg`](brand/a
 | Email | Resend (HTTP API) | Transactional order, access and enquiry email |
 | DRM / licensing | Provider-agnostic adapter | Locklizard adapter written; provider not confirmed until UAT |
 | Storage | JSONL files (dev) / Postgres (prod) | Same interface, switched by `DATABASE_URL` |
-| Hosting | Vercel (recommended) | First-class Next.js support; Avensra owns the account |
+| Hosting | Vercel (recommended) | First-class Next.js support; Emmanus Plus owns the account |
 
 ### Native vs custom (Phase 1 brief §11)
 
@@ -140,7 +140,7 @@ Customer clicks Buy
             -> issue licence     via the active provider
             -> record order      name, email, product, amount, country, licence
             -> email customer    branded, with access link + activation code
-            -> email Avensra     new-order notification
+            -> email Emmanus Plus     new-order notification
   -> Customer returns to /order/confirmed  (fires GA4 / Meta / LinkedIn purchase event)
 ```
 
@@ -150,13 +150,13 @@ revocation against the order. Partial refunds are recorded without revoking.
 
 ### Stripe setup checklist
 
-1. Create the two Products/Prices in the Avensra-owned Stripe account (USD).
+1. Create the two Products/Prices in the Emmanus Plus-owned Stripe account (USD).
 2. Put the Price IDs in `STRIPE_PRICE_BPAS` / `STRIPE_PRICE_TER`, and mirror the
    amounts in `NEXT_PUBLIC_PRICE_*` (display only).
 3. Add webhook endpoint `https://<domain>/api/stripe/webhook`, subscribed to
    `checkout.session.completed` and `charge.refunded`. Copy the signing secret
    into `STRIPE_WEBHOOK_SECRET`.
-4. Enable the card payment method and any regional methods Avensra wants.
+4. Enable the card payment method and any regional methods Emmanus Plus wants.
 
 Test locally with `stripe listen --forward-to localhost:3000/api/stripe/webhook`.
 
@@ -164,7 +164,7 @@ Test locally with `stripe listen --forward-to localhost:3000/api/stripe/webhook`
 
 ## Administration (brief §10)
 
-There is no custom dashboard, by design. Avensra administers:
+There is no custom dashboard, by design. Emmanus Plus administers:
 
 | Task | Where |
 |---|---|
@@ -223,7 +223,7 @@ After deploying, submit `https://<domain>/sitemap.xml` in Search Console.
 
 ## Deployment (Vercel)
 
-1. Avensra creates and owns the Vercel account; developers get Member access.
+1. Emmanus Plus creates and owns the Vercel account; developers get Member access.
 2. Import the repository, set every variable from `.env.example` in Project
    Settings → Environment Variables.
 3. Set `DATABASE_URL` — **required in production**. Vercel's filesystem is
@@ -261,11 +261,11 @@ changes, rebuild the same way: copy the repo, strip `src/app/api`, `/admin`,
 
 ## Ownership (brief §12)
 
-Every account below must be created and owned by Avensra, with developers added
+Every account below must be created and owned by Emmanus Plus, with developers added
 under role-based access:
 
 domain · hosting (Vercel) · Stripe · business email · Resend · DRM/licensing ·
 Google Analytics · Search Console · Meta and LinkedIn ad accounts.
 
-All code and configuration in this repository is Avensra's and is handed over at
+All code and configuration in this repository is Emmanus Plus's and is handed over at
 completion.

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 /**
- * Export screen for Avensra.
+ * Export screen for Emmanus Plus.
  *
  * Deliberately minimal: the brief rules out a custom admin dashboard, and
  * Stripe's own dashboard already administers orders, refunds and customers.

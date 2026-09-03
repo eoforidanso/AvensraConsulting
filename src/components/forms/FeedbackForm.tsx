@@ -161,8 +161,8 @@ export function FeedbackForm() {
           checked={consentToPublish}
           onChange={(e) => setConsentToPublish(e.target.checked)}
         >
-          Avensra may share my feedback publicly as a testimonial. I understand nothing is
-          published automatically and Avensra will review it first.
+          Emmanus Plus may share my feedback publicly as a testimonial. I understand nothing is
+          published automatically and Emmanus Plus will review it first.
         </Checkbox>
 
         {consentToPublish ? (

@@ -113,7 +113,7 @@ async function ensureTable(client: PgClient, collection: Collection) {
 
 function tableName(collection: Collection) {
   // Collection names are a closed union, so this is not user input.
-  return `avensra_${collection}`;
+  return `emmanusplus_${collection}`;
 }
 
 async function appendPostgres(collection: Collection, record: Record_) {

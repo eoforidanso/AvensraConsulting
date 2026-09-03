@@ -157,7 +157,7 @@ function adminEmail(
           `<strong>Licence provider:</strong> ${esc(licence.provider)}<br>` +
           `<strong>Licence ID:</strong> ${esc(licence.licenceId)}`,
       ),
-      small("Recorded automatically. View all orders in the Avensra admin export."),
+      small("Recorded automatically. View all orders in the Emmanus Plus admin export."),
     ].join(""),
   );
 }

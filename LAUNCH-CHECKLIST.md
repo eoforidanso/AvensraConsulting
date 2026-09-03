@@ -1,6 +1,6 @@
-# Launch Checklist — Avensra Phase 1
+# Launch Checklist — Emmanus Plus Phase 1
 
-Everything below is either **needed from Avensra** or **a decision to confirm**
+Everything below is either **needed from Emmanus Plus** or **a decision to confirm**
 before the site goes live. Items are ordered by what blocks launch first.
 
 ---
@@ -9,17 +9,19 @@ before the site goes live. Items are ordered by what blocks launch first.
 
 | # | Item | Owner | Notes |
 |---|---|---|---|
-| 1.1 | **Confirm product prices** | Avensra | The brief did not state them. Current values are placeholders: **$497** (Alignment System) and **$37** (Executive Reset). Set in Stripe, then mirror in `NEXT_PUBLIC_PRICE_*`. |
-| 1.2 | Stripe account created and activated | Avensra | Must be owned by Avensra. Developer added as Developer role. |
+| 1.1 | **Confirm product prices** | Emmanus Plus | The brief did not state them. Current values are placeholders: **$497** (Alignment System) and **$37** (Executive Reset). Set in Stripe, then mirror in `NEXT_PUBLIC_PRICE_*`. |
+| 1.2 | Stripe account created and activated | Emmanus Plus | Must be owned by Emmanus Plus. Developer added as Developer role. |
 | 1.3 | Stripe Products/Prices created; IDs added to env | Dev | `STRIPE_PRICE_BPAS`, `STRIPE_PRICE_TER` |
 | 1.4 | Stripe webhook endpoint + signing secret | Dev | `checkout.session.completed`, `charge.refunded` |
 | 1.5 | `DELIVERY_SECRET` generated | Dev | `openssl rand -base64 48`. Token minting refuses to run in production without it. |
 | 1.6 | `DATABASE_URL` set | Dev | Required on Vercel — the filesystem is ephemeral and records would be lost. |
-| 1.7 | `ADMIN_PASSWORD` set | Avensra | Long random string; Avensra holds it. |
-| 1.8 | Resend account + verified sending domain | Avensra | Needed for order confirmations to land, not go to spam. Add SPF/DKIM records. |
-| 1.9 | **Real product files** placed in `protected/` | Avensra | Currently placeholder PDFs. Filenames must match `src/content/products.ts`. **The GitHub repo is currently PUBLIC — do not commit real product files until it is made private, or move delivery to object storage.** See `protected/README.md`. |
-| 1.9a | **Decide repository visibility** | Avensra | `eoforidanso/AvensraConsulting` is public today. Recommend making it private before real product files or client-specific configuration are added. |
+| 1.7 | `ADMIN_PASSWORD` set | Emmanus Plus | Long random string; Emmanus Plus holds it. |
+| 1.8 | Resend account + verified sending domain | Emmanus Plus | Needed for order confirmations to land, not go to spam. Add SPF/DKIM records. |
+| 1.9 | **Real product files** placed in `protected/` | Emmanus Plus | Currently placeholder PDFs. Filenames must match `src/content/products.ts`. **The GitHub repo is currently PUBLIC — do not commit real product files until it is made private, or move delivery to object storage.** See `protected/README.md`. |
+| 1.9a | **Decide repository visibility** | Emmanus Plus | `eoforidanso/AvensraConsulting` is public today. Recommend making it private before real product files or client-specific configuration are added. |
 | 1.10 | Domain pointed at hosting, HTTPS confirmed | Dev | |
+| 1.11 | **Domain, email and LinkedIn still say "Avensra"** | Emmanus Plus | The brand was renamed to Emmanus Plus, but `avensraconsulting.com`, `info@avensraconsulting.com` and the LinkedIn slug were **left untouched on purpose** — these are real-world assets that exist (or don't) independently of the code, and inventing `emmanusplus.com` would put a non-existent address on a live contact page, sending every enquiry nowhere. **The site currently contradicts itself**: the footer and every transactional email say Emmanus Plus but show an Avensra address. Confirm the real domain and mailbox, then it is four lines in `src/lib/site.ts` plus the `MAIL_FROM`/`MAIL_TO` env vars. |
+| 1.12 | **GitHub repo name** | Emmanus Plus | The repo is still `eoforidanso/AvensraConsulting`, and the GitHub Pages preview is served from `/AvensraConsulting`. Renaming the repo changes that preview URL and needs the `basePath` in the export config updated to match. Cosmetic while this is a preview; worth doing before anyone is given the link. |
 
 ---
 
@@ -37,7 +39,7 @@ is a drop-in once the designer delivers, no further back-and-forth needed.
 | 2.1 | **Official logo files** | Both the artwork sheet and the new production brief say not to redesign this — use the supplied reference only. No final files delivered yet, so `src/components/Logo.tsx` contains a faithful **placeholder**. See `WEBSITE-ASSET-SPEC.md` §1 for exact filenames. |
 | 2.2 | **Hero photograph + watermark A** | `HeroBackdrop.tsx` is an on-brand vector stand-in. The brief (§8) specifies the watermark A at 10–15% opacity — the placeholder already uses 14%, so the real asset can go in at the same setting. See spec §2. |
 | 2.3 | **Product mock-ups (both products)** | `ProductVisual.tsx` holds vector stand-ins. See spec §3–4 for exact filenames, and §5 for the distinction between this presentation art and the actual protected product PDFs in item 1.9. |
-| 2.4 | ~~Brand colour hex values — conflict~~ **RESOLVED** | The design-direction artwork and the production brief stated different hex values (Charcoal especially: `#1B1F24` vs `#2B2B2B`). **Confirmed by Avensra 2026-08-24: the design-direction artwork sheet is correct.** The site's tokens are unchanged. The production brief's colour table (§3) has a typo and should be corrected before it's used to brief a designer — see `WEBSITE-ASSET-SPEC.md` §6. |
+| 2.4 | ~~Brand colour hex values — conflict~~ **RESOLVED** | The design-direction artwork and the production brief stated different hex values (Charcoal especially: `#1B1F24` vs `#2B2B2B`). **Confirmed by Emmanus Plus 2026-08-24: the design-direction artwork sheet is correct.** The site's tokens are unchanged. The production brief's colour table (§3) has a typo and should be corrected before it's used to brief a designer — see `WEBSITE-ASSET-SPEC.md` §6. |
 | 2.5 | LinkedIn company URL | `src/lib/site.ts` has a best guess — confirm the real URL. |
 | 2.7 | **Founder biography — shortened, needs content** | The About page now shows Emmanuel Ofori-Danso (Founder and Architect, 3 years in business) with an illustrated linocut portrait, replacing the earlier placeholder. **The detailed career history was deliberately removed, not re-attributed** — the previous version's claims (15+ years, senior HR leadership, workforce transformation, speaking and media work) were written for a different named person, and those are material claims prospective clients weigh. Supply the correct professional background and it goes straight back in. |
 | 2.8 | **Founder pronouns** | Not stated, so the biography is written to avoid pronouns entirely rather than assume. If a pronoun is preferred it is a one-block change in `src/app/about/page.tsx`. |
@@ -56,11 +58,11 @@ been reviewed by a lawyer.**
 
 | # | Action | Owner |
 |---|---|---|
-| 3.1 | Have a qualified adviser review Privacy Policy, Terms & Conditions, Refund Policy and Licence Terms | Avensra |
-| 3.2 | Fill the bracketed placeholders: registered company name, company number, registered address, governing law and jurisdiction | Avensra |
-| 3.3 | Name the actual sub-processors in the Privacy Policy once providers are chosen | Avensra |
+| 3.1 | Have a qualified adviser review Privacy Policy, Terms & Conditions, Refund Policy and Licence Terms | Emmanus Plus |
+| 3.2 | Fill the bracketed placeholders: registered company name, company number, registered address, governing law and jurisdiction | Emmanus Plus |
+| 3.3 | Name the actual sub-processors in the Privacy Policy once providers are chosen | Emmanus Plus |
 | 3.4 | Confirm the consumer-cancellation-waiver wording is valid in the jurisdictions sold to | Adviser |
-| 3.5 | Confirm sales tax / VAT treatment for digital goods; enable Stripe Tax if required | Avensra |
+| 3.5 | Confirm sales tax / VAT treatment for digital goods; enable Stripe Tax if required | Emmanus Plus |
 
 ---
 
@@ -85,7 +87,7 @@ so the trial covers the complete purchase → licence → protected-access journ
 
 - [ ] Purchase each product end to end with a live card
 - [ ] Order confirmation email arrives, is branded, and the access link works
-- [ ] Avensra receives the new-order notification
+- [ ] Emmanus Plus receives the new-order notification
 - [ ] Access page opens; files download; a second person cannot use the link
 - [ ] Expired and tampered tokens are rejected *(automated checks already pass)*
 - [ ] Refund in Stripe → access revoked → order record updated
@@ -98,7 +100,7 @@ so the trial covers the complete purchase → licence → protected-access journ
 
 ---
 
-## 6. Decisions Avensra should confirm
+## 6. Decisions Emmanus Plus should confirm
 
 | # | Question | Recommendation |
 |---|---|---|
@@ -120,7 +122,7 @@ Raised as the brief invites (§"Quotation Requested", final bullet).
 |---|---|---|---|
 | 7.1 | "Provide cart/checkout functionality where required" | Direct-to-checkout, no cart | Two single-item digital products. A cart is a step to abandon at, with no upsell to justify it. The wording already says "where required". |
 | 7.2 | "Customer account/member functionality only where required" | No accounts at launch | Signed expiring links plus reissue-on-request meets secure fulfilment with far less to build, secure and support. Matches §3's own steer. |
-| 7.3 | Refund administration | Use Stripe's native refunds, with automatic licence revocation wired to the webhook | Avoids building a refund UI. Avensra refunds where they already reconcile payments. |
+| 7.3 | Refund administration | Use Stripe's native refunds, with automatic licence revocation wired to the webhook | Avoids building a refund UI. Emmanus Plus refunds where they already reconcile payments. |
 | 7.4 | Feedback export | CSV download rather than a viewer | The brief says Excel is the working tool. A CSV export is less to build and more useful than a read-only web table. |
 | 7.5 | DRM for The Executive Reset™ | Keep protection genuinely light | Locking print or screen capture would break the product — it is meant to be printed and drawn on with a stylus. Watermarking plus identifiable copies is the right deterrent here. |
 | 7.6 | Storage | Add a hosted Postgres from day one | Not in the brief, but on serverless hosting form submissions are silently lost without it. ~$0–19/month. |

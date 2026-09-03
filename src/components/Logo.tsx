@@ -3,7 +3,7 @@ import Link from "next/link";
 type Tone = "light" | "dark";
 
 /**
- * Avensra wordmark.
+ * Emmanus Plus wordmark.
  *
  * NOTE FOR HANDOVER: the artwork sheet says "use supplied logo files only —
  * do not alter, redraw, stretch or change proportions". This is a faithful
@@ -51,14 +51,21 @@ export function Logo({
     <Link
       href={href}
       className={`group flex shrink-0 items-center gap-3 ${className}`}
-      aria-label="Avensra Consulting — home"
+      aria-label="Emmanus Plus Consulting — home"
     >
       <Mark className="h-9 w-auto shrink-0 sm:h-10" />
       <span className="flex flex-col justify-center whitespace-nowrap">
+        {/*
+          Tracking is tuned to the length of the name, not fixed. At twelve
+          characters, the 0.28em used for the previous seven-letter mark
+          pushed the header past the viewport at 1280px and knocked the
+          Contact Us button off-screen. This keeps the spaced, engraved feel
+          while fitting the bar.
+        */}
         <span
-          className={`font-heading text-lg leading-none tracking-[0.28em] sm:text-xl ${wordColor}`}
+          className={`font-heading text-base leading-none tracking-[0.14em] sm:text-lg sm:tracking-[0.16em] xl:text-xl xl:tracking-[0.18em] ${wordColor}`}
         >
-          AVENSRA
+          EMMANUS PLUS
         </span>
         <span className="mt-1.5 flex items-center gap-1.5">
           <span className="h-px w-3 bg-gold" aria-hidden="true" />

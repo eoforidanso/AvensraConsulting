@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
-    "The terms on which Avensra Consulting sells digital products, delivers corporate experiences and provides support.",
+    "The terms on which Emmanus Plus Consulting sells digital products, delivers corporate experiences and provides support.",
   alternates: { canonical: "/terms-and-conditions" },
 };
 
@@ -17,7 +17,7 @@ export default function TermsPage() {
     <LegalPage
       title="Terms & Conditions"
       updated={UPDATED}
-      summary="These terms govern your use of the Avensra website and your purchase of Avensra digital products and services. Please read them before buying."
+      summary="These terms govern your use of the Emmanus Plus website and your purchase of Emmanus Plus digital products and services. Please read them before buying."
     >
       <Clause n="1." title="About these terms">
         <p>
@@ -39,7 +39,7 @@ export default function TermsPage() {
           precedence.
         </p>
         <p className="text-sm text-charcoal/60">
-          [Avensra to insert registered company name, company number, registered address and
+          [Emmanus Plus to insert registered company name, company number, registered address and
           governing jurisdiction before publication.]
         </p>
       </Clause>
@@ -61,10 +61,10 @@ export default function TermsPage() {
             </>,
             <>
               <strong>Corporate experiences</strong> — facilitated sessions arranged
-              directly with Avensra under a separate written quotation.
+              directly with Emmanus Plus under a separate written quotation.
             </>,
             <>
-              <strong>Corporate licences</strong> — arranged directly with Avensra under a
+              <strong>Corporate licences</strong> — arranged directly with Emmanus Plus under a
               separate written licence agreement.
             </>,
             <>
@@ -139,9 +139,9 @@ export default function TermsPage() {
 
       <Clause n="8." title="Intellectual property">
         <p>
-          All Avensra content, methodologies, frameworks, templates, materials and marks
+          All Emmanus Plus content, methodologies, frameworks, templates, materials and marks
           &mdash; including the Business-to-People Alignment System&trade; and The Executive
-          Reset&trade; &mdash; remain the property of Avensra. Buying a product grants you a
+          Reset&trade; &mdash; remain the property of Emmanus Plus. Buying a product grants you a
           licence to use it; it does not transfer ownership of anything.
         </p>
         <p>
@@ -156,7 +156,7 @@ export default function TermsPage() {
           items={[
             "Share, resell, sublicense or redistribute any product or licence",
             "Circumvent, disable or attempt to defeat any licensing, watermarking or access control",
-            "Use Avensra material commercially with third parties without a corporate or facilitator licence",
+            "Use Emmanus Plus material commercially with third parties without a corporate or facilitator licence",
             "Attempt to gain unauthorised access to any part of the website or its systems",
             "Use the website for anything unlawful, or in a way that disrupts it for others",
           ]}
@@ -230,7 +230,7 @@ export default function TermsPage() {
           of the mandatory laws of the country where you live.
         </p>
         <p className="text-sm text-charcoal/60">
-          [Avensra to confirm governing law and jurisdiction with a qualified adviser.]
+          [Emmanus Plus to confirm governing law and jurisdiction with a qualified adviser.]
         </p>
       </Clause>
 

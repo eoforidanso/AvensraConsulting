@@ -10,7 +10,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Avensra Consulting about digital products, product support, corporate experiences, corporate licensing or consulting.",
+    "Get in touch with Emmanus Plus Consulting about digital products, product support, corporate experiences, corporate licensing or consulting.",
   alternates: { canonical: "/contact" },
 };
 
@@ -108,7 +108,7 @@ export default async function ContactPage({
                   rel="noreferrer noopener"
                   className="mt-1.5 block text-[0.95rem] text-charcoal/80 transition-colors hover:text-goldink"
                 >
-                  Follow Avensra Consulting
+                  Follow Emmanus Plus Consulting
                 </a>
               </div>
             </div>

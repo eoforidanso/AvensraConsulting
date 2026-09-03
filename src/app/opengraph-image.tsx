@@ -33,7 +33,7 @@ export default function OpengraphImage() {
           </svg>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 40, letterSpacing: 12, color: "#ffffff" }}>
-              AVENSRA
+              EMMANUS PLUS
             </div>
             <div style={{ fontSize: 14, letterSpacing: 7, color: "#c1874c", marginTop: 8 }}>
               STRATEGY. PEOPLE. PERFORMANCE.

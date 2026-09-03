@@ -2,7 +2,7 @@
  * Hero backdrop.
  *
  * The artwork uses a photographic sunrise-over-mountains scene with the
- * Avensra mark set large behind it. No licensed photograph was supplied, so
+ * Emmanus Plus mark set large behind it. No licensed photograph was supplied, so
  * this is a vector stand-in built from the brand palette that holds the same
  * composition and contrast. To use the real photograph: drop it in
  * /public/hero.jpg, render it with next/image behind this component's

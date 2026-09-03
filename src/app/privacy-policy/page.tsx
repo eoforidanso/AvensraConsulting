@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How Avensra Consulting collects, uses, stores and protects personal information, and the rights you have over your data.",
+    "How Emmanus Plus Consulting collects, uses, stores and protects personal information, and the rights you have over your data.",
   alternates: { canonical: "/privacy-policy" },
 };
 
@@ -17,11 +17,11 @@ export default function PrivacyPolicyPage() {
     <LegalPage
       title="Privacy Policy"
       updated={UPDATED}
-      summary="This policy explains what personal information Avensra Consulting collects, why we collect it, who we share it with, and the rights you have over it."
+      summary="This policy explains what personal information Emmanus Plus Consulting collects, why we collect it, who we share it with, and the rights you have over it."
     >
       <Clause n="1." title="Who we are">
         <p>
-          {site.legalName} (&ldquo;Avensra&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is
+          {site.legalName} (&ldquo;Emmanus Plus&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is
           the controller of the personal information described in this policy. You can
           reach us at{" "}
           <a href={`mailto:${site.email}`} className="text-goldink underline underline-offset-2">
@@ -30,7 +30,7 @@ export default function PrivacyPolicyPage() {
           .
         </p>
         <p className="text-sm text-charcoal/60">
-          [Avensra to insert registered company name, company number and registered address
+          [Emmanus Plus to insert registered company name, company number and registered address
           before publication.]
         </p>
       </Clause>
@@ -134,7 +134,7 @@ export default function PrivacyPolicyPage() {
           marketing.
         </p>
         <p className="text-sm text-charcoal/60">
-          [Avensra to list the named providers here once selected at UAT.]
+          [Emmanus Plus to list the named providers here once selected at UAT.]
         </p>
       </Clause>
 
@@ -200,7 +200,7 @@ export default function PrivacyPolicyPage() {
           the public web root and released only against a signed, expiring access token
           issued after a confirmed payment, or through our licensing provider&rsquo;s secure
           viewer. Access to stored order and enquiry data is restricted to authorised
-          Avensra personnel.
+          Emmanus Plus personnel.
         </p>
         <p>
           No system is perfectly secure. If a breach affects your rights, we will notify you

@@ -6,7 +6,7 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Refund Policy",
   description:
-    "When Avensra Consulting refunds digital product purchases and corporate bookings, how to request a refund, and how long refunds take.",
+    "When Emmanus Plus Consulting refunds digital product purchases and corporate bookings, how to request a refund, and how long refunds take.",
   alternates: { canonical: "/refund-policy" },
 };
 
@@ -119,7 +119,7 @@ export default function RefundPolicyPage() {
             "Cancelled 7 to 14 days before: 50% of the fee is payable.",
             "Cancelled less than 7 days before: the full fee is payable.",
             "Rescheduling with more than 7 days' notice: no charge, subject to availability.",
-            "If Avensra cancels or cannot deliver: full refund, or a rescheduled date at your choice.",
+            "If Emmanus Plus cancels or cannot deliver: full refund, or a rescheduled date at your choice.",
           ]}
         />
         <p>

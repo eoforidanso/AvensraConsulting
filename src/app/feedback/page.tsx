@@ -7,7 +7,7 @@ import { Section, Card, Rule } from "@/components/ui";
 export const metadata: Metadata = {
   title: "Share Your Feedback",
   description:
-    "Tell Avensra about your experience with our digital products, corporate experiences or consulting. Nothing is published without your explicit permission.",
+    "Tell Emmanus Plus about your experience with our digital products, corporate experiences or consulting. Nothing is published without your explicit permission.",
   alternates: { canonical: "/feedback" },
   robots: { index: true, follow: true },
 };
@@ -43,7 +43,7 @@ export default function FeedbackPage() {
               </h3>
               <p className="mt-3 text-[0.92rem] leading-relaxed text-charcoal/75">
                 We only publish feedback where you have explicitly told us we may, and even
-                then a person at Avensra reviews it first. You choose separately whether
+                then a person at Emmanus Plus reviews it first. You choose separately whether
                 your name may be used.
               </p>
             </Card>

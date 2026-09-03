@@ -9,7 +9,7 @@ export function stripe(): Stripe {
     throw new Error("STRIPE_SECRET_KEY is not set");
   }
   client ??= new Stripe(env.stripeSecretKey, {
-    appInfo: { name: "Avensra Consulting", version: "1.0.0" },
+    appInfo: { name: "Emmanus Plus Consulting", version: "1.0.0" },
   });
   return client;
 }

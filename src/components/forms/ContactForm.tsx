@@ -59,7 +59,7 @@ export function ContactForm({ defaultTopic }: { defaultTopic?: string }) {
       <FormStatus
         state="success"
         successTitle="Thank you — your message is with us"
-        successBody="We have sent a confirmation to your email address. Someone from Avensra will come back to you within one business day, and within two at the latest."
+        successBody="We have sent a confirmation to your email address. Someone from Emmanus Plus will come back to you within one business day, and within two at the latest."
       />
     );
   }

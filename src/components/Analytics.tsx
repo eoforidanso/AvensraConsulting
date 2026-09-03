@@ -5,7 +5,7 @@ import { env } from "@/lib/env";
  * Analytics and marketing tags.
  *
  * Each tag is rendered only when its ID is present, so the site ships with
- * nothing loading until Avensra provides the accounts. GA4 is the Phase 1
+ * nothing loading until Emmanus Plus provides the accounts. GA4 is the Phase 1
  * requirement; Meta Pixel and the LinkedIn Insight Tag are wired and ready
  * but stay dormant until an ID is set — that is the "technical readiness"
  * the brief asks for, without loading third-party trackers by default.

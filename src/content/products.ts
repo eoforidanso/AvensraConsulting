@@ -1,7 +1,7 @@
 /**
  * Launch product catalogue.
  *
- * PRICING: amounts are in USD cents and are PLACEHOLDERS pending Avensra
+ * PRICING: amounts are in USD cents and are PLACEHOLDERS pending Emmanus Plus
  * confirmation. Set them here (or via the matching env vars) before go-live.
  * The Stripe Price ID is the commercial source of truth at checkout — the
  * `priceUsd` below is used for display and structured data only, so the two
@@ -53,7 +53,7 @@ export const products: Product[] = [
     protection: "strong",
     format: "Protected digital system — documents, templates and tools",
     deliveryNote:
-      "Access is issued to the purchase email immediately after payment. The system is delivered through Avensra's licensed secure viewer; each licence is unique to the purchaser.",
+      "Access is issued to the purchase email immediately after payment. The system is delivered through Emmanus Plus's licensed secure viewer; each licence is unique to the purchaser.",
     supportNote:
       "Includes seven-day technical support for licence activation and secure access, from the date of purchase.",
     includes: [

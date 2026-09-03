@@ -1,20 +1,20 @@
 /**
  * Single source of truth for site-wide identity, navigation and contact
- * details. Avensra can change any of this without touching page code.
+ * details. Emmanus Plus can change any of this without touching page code.
  */
 
 export const site = {
-  name: "Avensra Consulting",
-  shortName: "Avensra",
+  name: "Emmanus Plus Consulting",
+  shortName: "Emmanus Plus",
   tagline: "Strategy. People. Performance.",
   description:
-    "Avensra helps organisations align their strategy with their people so performance is not just planned, it is lived.",
+    "Emmanus Plus helps organisations align their strategy with their people so performance is not just planned, it is lived.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://avensraconsulting.com",
   locale: "en_GB",
   email: "info@avensraconsulting.com",
   supportEmail: "info@avensraconsulting.com",
   linkedin: "https://www.linkedin.com/company/avensra-consulting",
-  legalName: "Avensra Consulting",
+  legalName: "Emmanus Plus Consulting",
   foundedYear: 2025,
 } as const;
 
@@ -76,7 +76,7 @@ export const primaryNav: NavItem[] = [
       {
         label: "Facilitated Experiences",
         href: "/corporate-experiences#experiences",
-        description: "Avensra-led Executive Reset™ sessions.",
+        description: "Executive Reset™ sessions led by Emmanus Plus.",
       },
       {
         label: "Corporate Licensing",

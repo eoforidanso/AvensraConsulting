@@ -11,7 +11,7 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Order Confirmed",
-  description: "Your Avensra purchase is confirmed and your access has been issued.",
+  description: "Your Emmanus Plus purchase is confirmed and your access has been issued.",
   robots: { index: false, follow: false },
 };
 

@@ -16,9 +16,9 @@ import { IconStrategy, IconPeople, IconTarget } from "@/components/icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "About Avensra",
+  title: "About Emmanus Plus",
   description:
-    "Avensra Consulting is a business and people strategy consultancy helping organisations turn strategic priorities into practical action, stronger organisational capability and measurable performance.",
+    "Emmanus Plus Consulting is a business and people strategy consultancy helping organisations turn strategic priorities into practical action, stronger organisational capability and measurable performance.",
   alternates: { canonical: "/about" },
 };
 
@@ -93,7 +93,7 @@ export default function AboutPage() {
       />
 
       <PageHero
-        eyebrow="About Avensra"
+        eyebrow="About Emmanus Plus"
         title={
           <>
             Strategy that connects.
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <span className="block text-goldink">Performance that lasts.</span>
           </>
         }
-        lead="Avensra Consulting is a business and people strategy consultancy helping organisations turn strategic priorities into practical action, stronger organisational capability and measurable performance."
+        lead="Emmanus Plus Consulting is a business and people strategy consultancy helping organisations turn strategic priorities into practical action, stronger organisational capability and measurable performance."
       />
 
       {/* --------------------------- The gap ---------------------------- */}
@@ -122,7 +122,7 @@ export default function AboutPage() {
               and operating decisions required to get there.
             </p>
             <p className="font-heading text-xl text-navy sm:text-2xl">
-              Avensra exists to help close that gap.
+              Emmanus Plus exists to help close that gap.
             </p>
           </Reveal>
         </div>
@@ -206,7 +206,7 @@ export default function AboutPage() {
 
             <div className="mt-8 space-y-4 text-[0.95rem] leading-relaxed text-white/65">
               <p>
-                This approach shapes Avensra&rsquo;s consulting engagements and the products
+                This approach shapes Emmanus Plus&rsquo;s consulting engagements and the products
                 we build.
               </p>
               <p>
@@ -226,14 +226,14 @@ export default function AboutPage() {
             stutter, so the title does different work. */}
         <SectionHeading
           eyebrow="Meet the founder"
-          title="The experience behind Avensra"
+          title="The experience behind Emmanus Plus"
           className="mb-14"
         />
 
         <div className="grid gap-12 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16">
           <Reveal>
             <FounderPortrait
-              alt={`${founder.name}, ${founder.role} of Avensra Consulting — an illustrated linocut-style portrait`}
+              alt={`${founder.name}, ${founder.role} of Emmanus Plus Consulting — an illustrated linocut-style portrait`}
             />
             <div className="mt-8">
               <p className="font-heading text-2xl text-navy">{founder.name}</p>
@@ -251,7 +251,7 @@ export default function AboutPage() {
             and media work) that was written for a different named person.
             Those are material claims on a consultancy site — prospective
             clients weigh them — so they have not been re-attributed here.
-            What remains is what Avensra has actually confirmed, plus the
+            What remains is what Emmanus Plus has actually confirmed, plus the
             thinking behind the firm, which is about the business rather
             than any individual's CV.
 
@@ -260,7 +260,7 @@ export default function AboutPage() {
           */}
           <Reveal delay={100} className="space-y-5 text-[1.02rem] leading-relaxed text-charcoal/80">
             <p>
-              Avensra Consulting was founded by {founder.name}, and has been working with
+              Emmanus Plus Consulting was founded by {founder.name}, and has been working with
               organisations for {founder.yearsInBusiness} years.
             </p>
             <p>
@@ -270,7 +270,7 @@ export default function AboutPage() {
               they need to achieve.
             </p>
             <p className="border-l-2 border-gold bg-ivory px-6 py-4 font-heading text-xl text-navy">
-              That gap is what Avensra was built to close.
+              That gap is what Emmanus Plus was built to close.
             </p>
             <p>
               The work focuses on making that connection clearer — bringing together
@@ -279,19 +279,19 @@ export default function AboutPage() {
               decisions they can implement and measure.
             </p>
             <p>
-              Avensra brings that thinking into a consulting model designed to serve
+              Emmanus Plus brings that thinking into a consulting model designed to serve
               organisations and professionals across markets.
             </p>
           </Reveal>
         </div>
       </Section>
 
-      {/* --------------------------- Why Avensra ------------------------- */}
+      {/* --------------------------- Why Emmanus Plus ------------------------- */}
       <Section tone="ivory">
         <div className="mx-auto max-w-3xl text-center">
           <Reveal>
             <p className="text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-goldink">
-              Why Avensra
+              Why Emmanus Plus
             </p>
             <h2 className="mt-5 font-heading text-3xl leading-tight text-navy sm:text-4xl">
               Good consulting should leave you with more than recommendations
@@ -312,7 +312,7 @@ export default function AboutPage() {
             </ul>
 
             <p className="mt-10 text-[0.98rem] leading-relaxed text-charcoal/70">
-              That is the standard we are building Avensra around.
+              That is the standard we are building Emmanus Plus around.
             </p>
 
             <p className="mt-8 font-heading text-2xl leading-snug text-navy sm:text-[1.9rem]">

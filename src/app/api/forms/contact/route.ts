@@ -39,13 +39,13 @@ export async function POST(request: Request) {
     ],
     autoReply: (d) => ({
       to: d.email,
-      subject: "We have received your message — Avensra Consulting",
+      subject: "We have received your message — Emmanus Plus Consulting",
       html: emailShell(
         "Thank you for getting in touch",
         [
           p(`Hello ${esc(d.name.split(" ")[0])},`),
           p(
-            "We have received your message and someone from Avensra will come back to you. We aim to respond within one business day, and within two at the latest.",
+            "We have received your message and someone from Emmanus Plus will come back to you. We aim to respond within one business day, and within two at the latest.",
           ),
           small(
             `For reference, this is what you sent us:<br><em>${esc(d.message).replace(/\n/g, "<br>")}</em>`,

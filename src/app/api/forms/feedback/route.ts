@@ -53,7 +53,7 @@ export async function POST(request: Request) {
     ],
     autoReply: (d) => ({
       to: d.email,
-      subject: "Thank you for your feedback — Avensra Consulting",
+      subject: "Thank you for your feedback — Emmanus Plus Consulting",
       html: emailShell(
         "Thank you for your feedback",
         [
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
                 "You have told us we may share your feedback publicly. Nothing is published automatically — we review every response first, and we will only use it in the form you agreed to.",
               )
             : small(
-                "You have told us this is for Avensra only, so we will not publish it. If you change your mind, just reply to this email.",
+                "You have told us this is for Emmanus Plus only, so we will not publish it. If you change your mind, just reply to this email.",
               ),
         ].join(""),
       ),

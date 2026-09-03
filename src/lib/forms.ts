@@ -1,6 +1,6 @@
 /**
  * Shared plumbing for the three public forms: validate, rate-limit, store,
- * notify. Submissions are recorded so Avensra can export them, and emailed
+ * notify. Submissions are recorded so Emmanus Plus can export them, and emailed
  * so nothing depends on someone remembering to check the admin screen.
  */
 import { NextResponse } from "next/server";
